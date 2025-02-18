@@ -1,0 +1,36 @@
+name: Netlify Deploy Preview
+
+on:
+  pull_request:
+    branches:
+      - master  # Trigger when a PR targets the master branch
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js and install dependencies
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies using Yarn
+        run: yarn install
+
+      - name: Build the project
+        run: yarn build
+
+      - name: Install Netlify CLI
+        run: yarn global add netlify-cli
+
+      - name: Deploy to Netlify Preview
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          # Deploy the build directory (assuming 'dist' is your build folder)
+          netlify deploy --dir=./dist --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --draft
