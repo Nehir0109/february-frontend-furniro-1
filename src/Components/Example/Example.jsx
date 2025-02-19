@@ -11,10 +11,7 @@ export const Example = ({ sectionName }) => {
         <h2>{sectionName ? sectionName : "Change Me"}</h2>
         <img src={reactLogo} className="logoReact" alt="React logo" />
 
-        <button
-          className="exampleButton"
-          onClick={() => setCount((count) => count + 1)}
-        >
+        <button className="exampleButton" onClick={() => setCount((count) => count + 1)}>
           example is {count}
         </button>
         <button className="exampleButton" onClick={() => setCount(0)}>
