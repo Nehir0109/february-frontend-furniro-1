@@ -1,0 +1,7 @@
+import "./style.scss";
+
+const SingleProductPage = () => {
+  return <div>SingleProductPage </div>;
+};
+
+export default SingleProductPage;
