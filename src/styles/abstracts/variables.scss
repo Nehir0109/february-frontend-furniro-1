@@ -1,2 +1,38 @@
 // styles/abstracts/_variables.scss
 $primary-color: azure;
+
+/* Variables Scss START */
+
+:root {
+    /* FONTS */
+    --fnt-family-Poppins: "Poppins", sans-serif;
+    --fnt-size-12xl: 3.25rem /* 52px */
+    --fnt-size-11xl: 3rem; /* 48px */
+    --fnt-size-10xl: 2.625rem; /* 42px */
+    --fnt-size-9xl: 2.5rem; /* 40px */
+    --fnt-size-8xl: 2.25rem; /* 36px */
+    --fnt-size-7xl: 2rem; /* 32px */
+    --fnt-size-6xl: 1.875rem; /* 30px */
+    --fnt-size-5xl: 1.75rem; /* 28px */
+    --fnt-size-4xl: 1.625rem; /* 26px */
+    --fnt-size-2xl: 1.5625rem; /* 25px */
+    --fnt-size-2xl: 1.5rem; /* 24px */
+    --fnt-size-xl: 1.25rem; /* 20px */
+    --fnt-size-lr: 1.125rem; /* 18px */
+    --fnt-size-md: 1rem; /* 16px */
+    --fnt-size-s: 0.9375rem; /* 15px */
+    --fnt-size-xs: 0.875rem; /* 14px */
+    --fnt-size-2xs: 0.8125rem; /* 13px */
+    --fnt-size-3xs: 0.75rem; /* 12px */
+    
+    /* COLORS */
+    --clr-grey: #3A3A3A;
+    --clr-lightGrey: #ACACAC;
+    --clr-golden: #B88E2F;
+    --clr-solarized: #FFF3E3;
+    --clr-green: #2EC1AC;
+    --clr-rose: #E97171;
+    --clr-orange: #FF9900;
+}
+
+ /* Variables Scss END */

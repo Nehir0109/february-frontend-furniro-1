@@ -1,0 +1,25 @@
+/* Reset Scss START */
+
+body {
+  font-family: var(--fnt-family-Poppins);
+}
+
+body button {
+  font-family: var(--fnt-family-Poppins);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Reset Scss END */
