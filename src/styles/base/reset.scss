@@ -1,25 +1,101 @@
 /* Reset Scss START */
 
-body {
-  font-family: var(--fnt-family-Poppins);
+:root {
+  font-family: Poppins, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-font: "Poppins", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --secondary-font: "Volkhov", serif;
 }
 
-body button {
-  font-family: var(--fnt-family-Poppins);
+#app {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+
+  @include max(calc($mobile-s - 20px)) {
+    * {
+      display: none !important;
+    }
+
+    &::after {
+      content: "screen size too small";
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: $text-dark;
+      font-family: $primary-font;
+    }
+  }
+}
+
+body {
+  color: $text-dark;
+  background: $white;
+  font-family: $primary-font;
+  min-height: 100vh;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
-li {
+ul {
   list-style: none;
 }
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: $primary-font;
+}
+
+input,
+textarea {
+  font-family: $primary-font;
+  border: none;
+  background: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $white inset !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $primary-font;
+  color: inherit;
+}
 /* Reset Scss END */
