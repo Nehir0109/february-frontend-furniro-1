@@ -1,4 +1,4 @@
-import "./example.scss";
+import "./Example.scss";
 import { useState } from "react";
 import reactLogo from "@/assets/react.svg";
 
