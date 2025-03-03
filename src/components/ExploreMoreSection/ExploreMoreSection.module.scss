@@ -1,0 +1,10 @@
+.exploreMoreContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  width: 100%;
+  background-color: #fcf8f3;
+  .exploreMoreContent {
+    width: 472px;
+  }
+}
