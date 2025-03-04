@@ -7,6 +7,7 @@ const HomePage = () => {
   return (
     <div>
       <ExploreMoreSection sectionName=" ExploreMoreSection" />
+
       <Example sectionName="Example Section" />
       <Example sectionName="Feature Section" />
     </div>

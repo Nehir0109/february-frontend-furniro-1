@@ -1,10 +1,11 @@
 .exploreMoreContainer {
-  display: flex;
-  flex-direction: column;
-  max-width: 1440px;
-  width: 100%;
-  background-color: #fcf8f3;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  flex-direction: row;
+  height: 670px;
+  background-color: red;
+
   .exploreMoreContent {
-    width: 472px;
+    width: 20%;
   }
 }

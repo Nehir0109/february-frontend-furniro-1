@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ExploreMoreSection.module.scss";
-
 import Carousel from "./CarouselComponent/Carousel";
+
 export const ExploreMoreSection = () => {
   return (
     <div className={styles.exploreMoreContainer}>
