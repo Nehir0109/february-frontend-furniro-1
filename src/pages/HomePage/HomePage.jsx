@@ -7,7 +7,7 @@ const HomePage = () => {
     <div>
       <Example sectionName="Example Section" />
       <Example sectionName="Feature Section" />
-      <TopCategoriesSection></TopCategoriesSection>
+      <TopCategoriesSection />
     </div>
   );
 };

@@ -20,7 +20,7 @@ export const TopCategoriesSection = () => {
           {categoryCardData.map((item, index) => (
             <CategoryCard key={index} image={item.image} category={item.category} />
           ))}
-          <CategoryCard></CategoryCard>
+          <CategoryCard />
         </div>
       </div>
     </section>
