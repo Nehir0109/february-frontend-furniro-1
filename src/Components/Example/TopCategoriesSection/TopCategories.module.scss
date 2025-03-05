@@ -1,0 +1,31 @@
+.TopCategoriesWrapper {
+  width: 100vw;
+
+  .TopCategoriesContainer {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .TopCategoriesHeader {
+      text-align: center;
+      .title1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+      }
+      .title2 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: #acacac;
+      }
+    }
+
+    .CategoryCards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.CategoryCard {
+  .card {
+    display: flex;
+    flex-direction: column;
+
+    .card-image {
+      width: 100%;
+      height: auto;
+    }
+    .content {
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+}
