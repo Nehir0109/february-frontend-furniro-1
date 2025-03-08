@@ -4,7 +4,36 @@
   flex-direction: row;
   height: 670px;
 
-  .exploreMoreContent {
+  background-color: #fcf8f3;
+  .leftContent {
     width: 30%;
+    padding-left: clamp(20px, 4vw, 100px);
+    max-width: 422px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  h2 {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #3a3a3a;
+  }
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #acacac;
+  }
+  .btn {
+    border: none;
+    background-color: #b88e2f;
+    padding: 13px 25px;
+    color: white;
   }
 }

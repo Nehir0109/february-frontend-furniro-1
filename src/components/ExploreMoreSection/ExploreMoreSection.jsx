@@ -9,11 +9,11 @@ export const ExploreMoreSection = () => {
         <div>
           <h2>50+ Beautiful rooms inspiration</h2>
           <p>
-            Our designer already made a lot of beautiful prototipe of rooms that inspire
-            you
+            Our designer already made a lot of beautiful <br />
+            prototipe of rooms that inspire you
           </p>
         </div>
-        <button>Explore More</button>
+        <button className={styles.btn}>Explore More</button>
       </div>
       {/* Buraya Carousel component gelecek */}
       <Carousel />

@@ -29,7 +29,7 @@ const Carousel = () => {
         breakpoints={{
           640: { slidesPerView: 1 },
           1024: { slidesPerView: 2 },
-          1280: { slidesPerView: 2 },
+          1280: { slidesPerView: 2.5 },
         }}
       >
         {rooms.map((room) => (
