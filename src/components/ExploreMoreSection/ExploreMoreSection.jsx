@@ -5,7 +5,7 @@ import Carousel from "./CarouselComponent/Carousel";
 export const ExploreMoreSection = () => {
   return (
     <div className={styles.exploreMoreContainer}>
-      <div className={styles.exploreMoreContent}>
+      <div className={styles.leftContent}>
         <div>
           <h2>50+ Beautiful rooms inspiration</h2>
           <p>

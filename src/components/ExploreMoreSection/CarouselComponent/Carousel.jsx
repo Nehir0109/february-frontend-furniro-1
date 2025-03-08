@@ -19,7 +19,7 @@ const rooms = [
 ];
 const Carousel = () => {
   return (
-    <div className={styles.sliderContainer}>
+    <div className={styles.rightContent}>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={20}
