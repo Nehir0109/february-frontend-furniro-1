@@ -1,5 +1,5 @@
 import style from "./Example.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "@/assets/react.svg";
 
 // eslint-disable-next-line react/prop-types
