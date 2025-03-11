@@ -1,0 +1,16 @@
+.productSectionWrapper {
+  width: 100vw;
+  background-color: white;
+
+  .productSectionTitle {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  .cardGrid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
