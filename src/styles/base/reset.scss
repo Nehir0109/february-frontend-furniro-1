@@ -1,14 +1,14 @@
 /* Reset Scss START */
 
 :root {
-  font-family: Poppins, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-font: "Poppins", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-font: "Poppins", sans-serif;
   --secondary-font: "Volkhov", serif;
 }
 
@@ -46,15 +46,15 @@ body {
       place-items: center;
       font-size: 18px;
       font-weight: 500;
-      color: $text-dark;
+      color: $clr-grey;
       font-family: $primary-font;
     }
   }
 }
 
 body {
-  color: $text-dark;
-  background: $white;
+  color: $clr-grey;
+  background: white;
   font-family: $primary-font;
   min-height: 100vh;
 }
@@ -86,7 +86,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $white inset !important;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 h1,
