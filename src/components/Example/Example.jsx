@@ -1,19 +1,23 @@
-import "./Example.scss";
+import style from "./Example.module.scss";
 import { useState } from "react";
 import reactLogo from "@/assets/react.svg";
 
+// eslint-disable-next-line react/prop-types
 export const Example = ({ sectionName }) => {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="exampleContainer">
-      <h2>{sectionName ? sectionName : "Change Me"}</h2>
-      <img src={reactLogo} className="logoReact" alt="React logo" />
+    <div className={style.exampleContainer}>
+      <h2>{sectionName || "Change Me"}</h2>
+      <img src={reactLogo} className={style.logoReact} alt="React logo" />
 
-      <button className="exampleButton" onClick={() => setCount((count) => count + 1)}>
+      <button
+        className={style.exampleButton}
+        onClick={() => setCount((count) => count + 1)}
+      >
         example is {count}
       </button>
-      <button className="exampleButton" onClick={() => setCount(0)}>
+      <button className={style.exampleButton} onClick={() => setCount(0)}>
         reset count to 0
       </button>
     </div>
