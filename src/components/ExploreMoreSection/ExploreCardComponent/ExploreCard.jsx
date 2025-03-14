@@ -1,19 +1,31 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./ExploreCard.module.scss";
 import arrow from "../../../assets/ExploreMoreSection/arrow.svg";
-function ExploreCard({ name, image }) {
+
+function ExploreCard({ name, image, isActive }) {
   return (
     <div className={styles.card}>
-      <img className={styles.imageDiv} src={image} alt={name} />
-      <div className={styles.cardContent}>
-        <span>01 — Bed Room</span>
-        <h3>Inner Peace</h3>
-        <button className={styles.arrowBtn}>
-          <img style={{}} src={arrow} alt="" />
-        </button>
+      <div className={styles.imageDiv}>
+        <img src={image} alt={name} />
       </div>
+      {isActive && (
+        <div className={styles.cardContent}>
+          <span>01 — Bed Room</span>
+          <h3>Inner Peace</h3>
+          <button className={styles.arrowBtn}>
+            <img src={arrow} alt="" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
+
+ExploreCard.propTypes = {
+  name: PropTypes.string.isRequired, 
+  image: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired, 
+};
 
 export default ExploreCard;

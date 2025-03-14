@@ -1,11 +1,12 @@
-import React from "react";
 import styles from "./ExploreMoreSection.module.scss";
 import Carousel from "./CarouselComponent/Carousel";
+import { Col, Row } from "antd"
 
 export const ExploreMoreSection = () => {
   return (
-    <div className={styles.exploreMoreContainer}>
-      <div className={styles.leftContent}>
+ 
+    <Row className={styles.exploreMoreContainer}>
+      <Col span={10}  className={styles.leftContent}>
         <div>
           <h2>50+ Beautiful rooms inspiration</h2>
           <p>
@@ -14,10 +15,15 @@ export const ExploreMoreSection = () => {
           </p>
         </div>
         <button className={styles.btn}>Explore More</button>
-      </div>
-      {/* Buraya Carousel component gelecek */}
-      <Carousel />
-      {/* carousel bitiş */}
-    </div>
+      </Col>
+      <Col style={{
+           display:"flex",
+           alignItems:"center",
+           justifyContent:"center"
+      }} span={14}> 
+      <Carousel  />
+      </Col>
+
+    </Row>
   );
 };

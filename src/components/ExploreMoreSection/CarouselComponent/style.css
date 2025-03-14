@@ -1,0 +1,49 @@
+
+.swiper-button-prev {
+ display: none;
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  font-size: 24px;
+  width: 7px;
+  height: 14px;
+  background-color: #FFFFFF;
+padding:16px 19px;
+border-radius: 50px;
+margin-right: 40px;
+display: flex;
+align-items: center;
+color: #B88E2F;
+box-shadow: #00000029;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+ 
+    top: 10px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.swiper-pagination {
+  position: relative;
+    text-align:center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
+
+.swiper-pagination-bullet-active {
+    color: #B88E2F;
+    width: 11px;
+    height: 11px;
+    margin:  5px;
+    border :1px solid #B88E2F;
+margin-top: 100px;
+}
+
+.swiper-pagination-bullet {
+
+    margin-top: 100px;
+background-color: #ACACAC;
+}

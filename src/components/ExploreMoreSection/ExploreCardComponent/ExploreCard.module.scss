@@ -1,10 +1,7 @@
 .card {
-  position: relative;
-  imageDiv {
-    width: 372px;
-    height: 486px;
-    border: 1px solid black;
-    object-fit: cover;
+
+  .imageDiv{
+
   }
   .cardContent {
     object-fit: cover;
@@ -43,4 +40,5 @@
     height: 48px;
     bottom: 0;
   }
+  
 }

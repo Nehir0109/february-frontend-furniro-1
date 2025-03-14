@@ -1,44 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import styles from "./Carousel.module.scss";
+import "./style.css";
 import ExploreCard from "../ExploreCardComponent/ExploreCard";
 
 const rooms = [
-  { id: "1", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "2", name: "Bedroom", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "3", name: "Bathroom", image: "src/assets/ExploreMoreSection/image4.svg" },
-  { id: "4", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "5", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "6", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "7", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "8", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
+  { id: "1", name: "Living Room", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "2", name: "Bedroom", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "3", name: "Bathroom", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "4", name: "Living Room", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "5", name: "Living Room", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "6", name: "Living Room", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "7", name: "Living Room", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "8", name: "Living Room", image: "src/assets/ExploreMoreSection/image5.svg" },
 ];
+
 const Carousel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);  
+
   return (
-    <div className={styles.rightContent}>
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={20}
-        slidesPerView={3}
-        navigation
-        pagination={{ clickable: true }}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          1024: { slidesPerView: 2 },
-          1280: { slidesPerView: 2.5 },
-        }}
-      >
-        {rooms.map((room) => (
-          <SwiperSlide key={room.id}>
-            <ExploreCard image={room.image} name={room.name} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <Swiper
+      style={{
+        height: "582px"  
+      }}
+      modules={[Navigation, Pagination]}
+      spaceBetween={10}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}  
+      breakpoints={{
+        640: { slidesPerView: 1 },
+        1024: { slidesPerView: 2 },
+        1280: { slidesPerView: 2.5 },
+      }}
+    >
+      {rooms.map((room, index) => (
+        <SwiperSlide
+          key={room.id}
+          style={{
+            height: activeIndex === index ? "582px" : "486px",
+          }}
+        >
+          <ExploreCard
+            image={room.image}
+            name={room.name}
+            isActive={activeIndex === index}  
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
