@@ -27,30 +27,20 @@ const Carousel = () => {
         height: "582px",
       }}
       modules={[Navigation, Pagination]}
-      spaceBetween={10}
+      spaceBetween={20}
       slidesPerView={3}
       navigation
       pagination={{ clickable: true }}
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       breakpoints={{
         640: { slidesPerView: 1 },
-        1024: { slidesPerView: 1 },
-        1280: { slidesPerView: 3 },
+        1024: { slidesPerView: 2 },
+        1280: { slidesPerView: 2.5 },
       }}
     >
       {rooms.map((room, index) => (
-        <SwiperSlide
-          key={room.id}
-          style={{
-            border: "1px solid red",
-            height: activeIndex === index ? "582px" : "486px",
-          }}
-        >
-          <ExploreCard
-            image={room.image}
-            name={room.name}
-            isActive={activeIndex === index}
-          />
+        <SwiperSlide key={room.id}>
+          <ExploreCard room={room} isActive={activeIndex === index} />
         </SwiperSlide>
       ))}
     </Swiper>

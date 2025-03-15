@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./ExploreCard.module.scss";
 import arrow from "../../../assets/ExploreMoreSection/arrow.svg";
 
-function ExploreCard({ name, image, isActive }) {
-  const [imageHeight, setImageHeight] = useState("auto");
-
-  useEffect(() => {
-    if (isActive) {
-      setImageHeight("700px");
-    } else {
-      setImageHeight("auto");
-    }
-  }, [isActive]);
-
+function ExploreCard({ room, isActive }) {
   return (
     <div className={styles.card}>
-      <div id={styles.imageDiv} style={{ backgroundColor: "pink", height: imageHeight }}>
-        <img src={image} alt={name} />
+      <div className={isActive ? styles.imageDiv : styles.inActiveCard}>
+        <img src={room.image} alt={room.name} />
       </div>
       {isActive && (
         <div className={styles.cardContent}>
