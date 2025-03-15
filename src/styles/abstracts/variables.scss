@@ -1,2 +1,49 @@
-// styles/abstracts/_variables.scss
-$primary-color: azure;
+/* Variables Scss START */
+
+$primary-font: "Poppins", system-ui, sans-serif;
+
+/* FONT SIZES */
+$fnt-size-12xl: 3.25rem; /* 52px */
+$fnt-size-11xl: 3rem; /* 48px */
+$fnt-size-10xl: 2.625rem; /* 42px */
+$fnt-size-9xl: 2.5rem; /* 40px */
+$fnt-size-8xl: 2.25rem; /* 36px */
+$fnt-size-7xl: 2rem; /* 32px */
+$fnt-size-6xl: 1.875rem; /* 30px */
+$fnt-size-5xl: 1.75rem; /* 28px */
+$fnt-size-4xl: 1.625rem; /* 26px */
+$fnt-size-3xl: 1.5625rem; /* 25px */
+$fnt-size-2xl: 1.5rem; /* 24px */
+$fnt-size-xl: 1.25rem; /* 20px */
+$fnt-size-lr: 1.125rem; /* 18px */
+$fnt-size-md: 1rem; /* 16px */
+$fnt-size-s: 0.9375rem; /* 15px */
+$fnt-size-xs: 0.875rem; /* 14px */
+$fnt-size-2xs: 0.8125rem; /* 13px */
+$fnt-size-3xs: 0.75rem; /* 12px */
+
+/* COLORS */
+$clr-grey: #3a3a3a;
+$clr-lightGrey: #acacac;
+$clr-golden: #b88e2f;
+$clr-solarized: #fff3e3;
+$clr-green: #2ec1ac;
+$clr-rose: #e97171;
+$clr-orange: #ff9900;
+
+/* SCREEN SIZES */
+$desktop-2xl: 1920px;
+$desktop-xl: 1600px;
+$desktop-l: 1440px;
+$desktop-m: 1200px;
+$desktop-s: 1024px;
+$tablet-l: 992px;
+$tablet-m: 768px;
+$tablet-s: 640px;
+$mobile-l: 576px;
+$mobile-m: 480px;
+$mobile-s: 320px;
+
+$max-width: 1440px;
+
+/* Variables Scss END */
