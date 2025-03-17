@@ -1,3 +1,4 @@
+@use "@/styles/abstracts/variables" as *;
 .CategoryCard {
   display: flex;
   flex-direction: column;
@@ -7,9 +8,9 @@
   }
   .content {
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: $primary-font;
     font-weight: 600;
-    font-size: clamp(18px, 2vw, 24px);
+    font-size: clamp($fnt-size-lr, 2vw, $fnt-size-2xl);
     line-height: 36px;
   }
 }

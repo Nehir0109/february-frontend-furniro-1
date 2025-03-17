@@ -1,23 +1,25 @@
+@use "@/styles/abstracts/variables" as *;
+
 .TopCategoriesWrapper {
   width: 100vw;
   margin: 0 auto;
   .TopCategoriesContainer {
-    width: 100%;
+    width: 90%;
     max-width: 1440px;
     margin: 0 auto;
 
     .TopCategoriesHeader {
       text-align: center;
       .title1 {
-        font-family: "Poppins", sans-serif;
+        font-family: $primary-font;
         font-weight: 700;
-        font-size: clamp(25px, 2vw, 32px);
+        font-size: clamp($fnt-size-3xl, 2vw, $fnt-size-7xl);
       }
       .title2 {
-        font-family: "Poppins", sans-serif;
+        font-family: $primary-font;
         font-weight: 400;
-        font-size: clamp(14px, 2vw, 20px);
-        color: #acacac;
+        font-size: clamp($fnt-size-xs, 2vw, $fnt-size-xl);
+        color: $clr-lightGrey;
       }
     }
 
