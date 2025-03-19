@@ -1,6 +1,6 @@
 import { Example } from "@/components/Example/Example";
 import "./style.scss";
-import { OurProductSection } from "../../components/Example/OurProductSection/OurProductSection";
+import { OurProductSection } from "@/components/OurProductSection/OurProductSection";
 
 const HomePage = () => {
   return (
