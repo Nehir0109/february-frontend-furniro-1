@@ -9,11 +9,11 @@ import ExploreCard from "../ExploreCardComponent/ExploreCard";
 
 const rooms = [
   { id: "1", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "2", name: "Bedroom", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "3", name: "Bathroom", image: "src/assets/ExploreMoreSection/image3.svg" },
+  { id: "2", name: "Bedroom", image: "src/assets/ExploreMoreSection/image4.svg" },
+  { id: "3", name: "Bathroom", image: "src/assets/ExploreMoreSection/image5.svg" },
   { id: "4", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "5", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
-  { id: "6", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
+  { id: "5", name: "Living Room", image: "src/assets/ExploreMoreSection/image5.svg" },
+  { id: "6", name: "Living Room", image: "src/assets/ExploreMoreSection/image4.svg" },
   { id: "7", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
   { id: "8", name: "Living Room", image: "src/assets/ExploreMoreSection/image3.svg" },
 ];
@@ -33,6 +33,7 @@ const Carousel = () => {
       pagination={{ clickable: true }}
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       breakpoints={{
+        0: { slidesPerView: 1 }, 
         640: { slidesPerView: 1 },
         1024: { slidesPerView: 2 },
         1280: { slidesPerView: 2.5 },

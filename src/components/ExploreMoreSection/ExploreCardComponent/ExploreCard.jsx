@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import styles from "./ExploreCard.module.scss";
 import arrow from "../../../assets/ExploreMoreSection/arrow.svg";
 
+
+
 function ExploreCard({ room, isActive }) {
   return (
     <div className={styles.card}>
@@ -20,11 +22,11 @@ function ExploreCard({ room, isActive }) {
     </div>
   );
 }
-
 ExploreCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  room: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
   isActive: PropTypes.bool.isRequired,
 };
-
 export default ExploreCard;
