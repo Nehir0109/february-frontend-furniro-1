@@ -1,13 +1,25 @@
 .exploreMoreContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-
   background-color: #fcf8f3;
+  @media (max-width:1200px) {
+  flex-direction: column;
+
+
+  }
+  
   .leftContent {
     padding-left: clamp(20px, 4vw, 100px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    @media (max-width:1200px) { 
+      margin: auto;
+      }
+      
   }
   h2 {
     margin: 0;

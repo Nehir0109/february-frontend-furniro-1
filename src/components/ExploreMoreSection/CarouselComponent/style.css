@@ -63,3 +63,16 @@
   gap: 8px;
   z-index: 10;
 }
+:where(.css-dev-only-do-not-override-tjsggz).ant-col-14 {
+max-width: 70%;
+}  
+
+@media (max-width:1200px) { 
+
+  :where(.css-dev-only-do-not-override-tjsggz).ant-col-14 {
+    max-width: 100%;
+  }
+
+
+  }
+  

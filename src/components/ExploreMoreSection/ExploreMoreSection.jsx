@@ -4,8 +4,8 @@ import { Col, Row } from "antd";
 
 export const ExploreMoreSection = () => {
   return (
-    <Row className={styles.exploreMoreContainer}>
-      <Col span={10} className={styles.leftContent}>
+    <div className={styles.exploreMoreContainer}>
+      <div span={10} className={styles.leftContent}>
         <div>
           <h2>50+ Beautiful rooms inspiration</h2>
           <p>
@@ -14,10 +14,10 @@ export const ExploreMoreSection = () => {
           </p>
         </div>
         <button className={styles.btn}>Explore More</button>
-      </Col>
+      </div>
       <Col className={styles.rightContent} span={14}>
         <Carousel />
       </Col>
-    </Row>
+    </div>
   );
 };
