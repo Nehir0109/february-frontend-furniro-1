@@ -1,6 +1,6 @@
 import { Example } from "@/components/Example/Example";
 import "./style.scss";
-import { TopCategoriesSection } from "../../Components/Example/TopCategoriesSection/TopCategories";
+import { TopCategoriesSection } from "@/Components/TopCategoriesSection/TopCategories";
 
 const HomePage = () => {
   return (

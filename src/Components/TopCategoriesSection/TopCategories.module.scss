@@ -1,14 +1,14 @@
 @use "@/styles/abstracts/variables" as *;
 
-.TopCategoriesWrapper {
+.topCategoriesWrapper {
   width: 100vw;
   margin: 0 auto;
-  .TopCategoriesContainer {
+  .topCategoriesContainer {
     width: 90%;
-    max-width: 1440px;
+    max-width: $max-width;
     margin: 0 auto;
 
-    .TopCategoriesHeader {
+    .topCategoriesHeader {
       text-align: center;
       .title1 {
         font-family: $primary-font;
@@ -23,7 +23,7 @@
       }
     }
 
-    .CategoryCards {
+    .categoryCards {
       padding-top: 30px;
       display: flex;
       flex-wrap: wrap;
