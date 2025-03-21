@@ -3,7 +3,7 @@
 .heroContainer {
   position: relative;
   margin: auto;
-  max-width: 1440px;
+  max-width: $max-width;
   display: flex;
 
   img {
@@ -19,7 +19,7 @@
     bottom: 8vh;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 561px;
+    max-width: $max-width-sm;
     width: 30vw;
     height: auto;
     background-color: $clr-white-second;
@@ -29,7 +29,7 @@
     h5 {
       font-family: $primary-font;
       font-weight: 600;
-      font-size: clamp(12px, 1.5vw, 16px);
+      font-size: clamp($fnt-size-3xs, 1.5vw, $fnt-size-md);
       letter-spacing: 3px;
       color: $clr-grey;
     }
@@ -41,7 +41,7 @@
       line-height: clamp(24px, 4vw, 45px);
       color: $clr-golden;
 
-      @media (max-width: 810px) {
+      @media (max-width: $tablet-l) {
         font-size: smaller;
         color: $clr-golden;
       }
@@ -53,41 +53,41 @@
       font-size: clamp(12px, 2vw, 18px);
       line-height: clamp(20px, 3vw, 24px);
       color: $clr-grey;
-      @media (max-width: 580px) {
+      @media (max-width: $mobile-l) {
         display: none;
       }
     }
     .heroBtn {
       font-family: $primary-font;
       font-weight: 700;
-      font-size: clamp(12px, 1vw, 16px);
+      font-size: clamp(12px, 1vw, $fnt-size-md);
       color: $clr-white;
       background-color: $clr-golden;
       padding: clamp(10px, 1.5vw, 18px) clamp(10px, 2vw, 15px);
       width: 222px;
       margin-top: 18px;
-      @media (max-width: 835px) {
+      @media (max-width: $tablet-L) {
         width: 150px;
         margin-top: 10px;
       }
-      @media (max-width: 600px) {
+      @media (max-width: $tablet-s) {
         width: 100px;
         margin-top: 10px;
       }
     }
 
-    @media (max-width: 1272px) {
+    @media (max-width: $desktop-l) {
       width: 40vw;
       right: 3vw;
     }
 
-    @media (max-width: 1035px) {
+    @media (max-width: $desktop-s) {
       width: 40vw;
       bottom: 1.5vh;
       padding: 20px;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: $tablet-s) {
       width: 250px;
       background-color: transparent;
       bottom: 0px;

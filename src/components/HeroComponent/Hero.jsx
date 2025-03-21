@@ -1,7 +1,7 @@
 import styles from "./Hero.module.scss";
-import image from "../../assets/Hero/heroBackground.svg";
+import image from "@/assets/Hero/heroBackground.svg";
 
-function Hero() {
+const Hero = () => {
   return (
     <div className={styles.heroContainer}>
       <img src={image} alt="" />
@@ -17,6 +17,6 @@ function Hero() {
       </div>
     </div>
   );
-}
+};
 
 export default Hero;
