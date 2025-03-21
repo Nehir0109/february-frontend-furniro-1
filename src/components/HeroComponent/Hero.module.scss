@@ -1,11 +1,21 @@
 @use "/src/styles/abstracts/variables.scss" as *;
 
 .heroContainer {
+  width: 100%;
   position: relative;
-  margin: auto;
-  max-width: $max-width;
-  display: flex;
-
+  .heroBackground {
+    position: relative;
+    background-image: url(../../assets/Hero/heroBackground.svg);
+    height: 710px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @media (max-width: $mobile-l) {
+      height: 400px;
+      width: 585px;
+      background-position: 70%;
+    }
+  }
   img {
     object-fit: cover;
     width: 100%;
@@ -15,16 +25,26 @@
   .heroContent {
     display: flex;
     position: absolute;
-    right: 5vw;
-    bottom: 8vh;
+    border-radius: 10px;
+    right: 0;
+    bottom: clamp(0vw, 5vw, 8vw);
+
+    margin: auto;
     flex-direction: column;
     justify-content: space-between;
-    max-width: $max-width-sm;
-    width: 30vw;
-    height: auto;
+    max-width: $mobile-l;
+    max-height: 443px;
     background-color: $clr-white-second;
     padding: 37px 43px 37px 39px;
-    text-align: left;
+    margin: 20px;
+    @media (max-width: $tablet-L) {
+      max-width: 70%;
+    }
+    @media (max-width: $mobile-l) {
+      position: static;
+      max-width: 100%;
+      margin: 0 auto;
+    }
 
     h5 {
       font-family: $primary-font;
@@ -37,12 +57,11 @@
     h1 {
       font-family: $primary-font;
       font-weight: 700;
-      font-size: clamp(20px, 2vw, 52px);
+      font-size: clamp(20px, 1.5vw, 52px);
       line-height: clamp(24px, 4vw, 45px);
       color: $clr-golden;
 
       @media (max-width: $tablet-l) {
-        font-size: smaller;
         color: $clr-golden;
       }
     }
@@ -53,9 +72,6 @@
       font-size: clamp(12px, 2vw, 18px);
       line-height: clamp(20px, 3vw, 24px);
       color: $clr-grey;
-      @media (max-width: $mobile-l) {
-        display: none;
-      }
     }
     .heroBtn {
       font-family: $primary-font;
@@ -64,33 +80,8 @@
       color: $clr-white;
       background-color: $clr-golden;
       padding: clamp(10px, 1.5vw, 18px) clamp(10px, 2vw, 15px);
-      width: 222px;
+      max-width: 222px;
       margin-top: 18px;
-      @media (max-width: $tablet-L) {
-        width: 150px;
-        margin-top: 10px;
-      }
-      @media (max-width: $tablet-s) {
-        width: 100px;
-        margin-top: 10px;
-      }
-    }
-
-    @media (max-width: $desktop-l) {
-      width: 40vw;
-      right: 3vw;
-    }
-
-    @media (max-width: $desktop-s) {
-      width: 40vw;
-      bottom: 1.5vh;
-      padding: 20px;
-    }
-
-    @media (max-width: $tablet-s) {
-      width: 250px;
-      background-color: transparent;
-      bottom: 0px;
     }
   }
 }

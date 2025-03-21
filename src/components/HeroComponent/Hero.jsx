@@ -4,7 +4,7 @@ import image from "@/assets/Hero/heroBackground.svg";
 const Hero = () => {
   return (
     <div className={styles.heroContainer}>
-      <img src={image} alt="" />
+      <div className={styles.heroBackground}></div>
       <div className={styles.heroContent}>
         <h5>New Arrival</h5>
         <h1>Discover Our New Collection</h1>
