@@ -31,9 +31,10 @@ const Carousel = () => {
       slidesPerView={3}
       navigation
       pagination={{ clickable: true }}
-      onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+      onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+      loop={true}
       breakpoints={{
-        0: { slidesPerView: 1 }, 
+        0: { slidesPerView: 1 },
         640: { slidesPerView: 1 },
         1024: { slidesPerView: 2 },
         1280: { slidesPerView: 2.5 },

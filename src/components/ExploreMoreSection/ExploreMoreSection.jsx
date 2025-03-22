@@ -1,6 +1,6 @@
 import styles from "./ExploreMoreSection.module.scss";
 import Carousel from "./CarouselComponent/Carousel";
-import { Col, Row } from "antd";
+import { Col } from "antd";
 
 export const ExploreMoreSection = () => {
   return (
