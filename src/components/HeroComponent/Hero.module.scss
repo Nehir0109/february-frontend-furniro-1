@@ -1,10 +1,9 @@
 @use "/src/styles/abstracts/variables.scss" as *;
 
 .heroContainer {
-  width: 100%;
+  width: 100vw;
   position: relative;
   .heroBackground {
-    position: relative;
     background-image: url(../../assets/Hero/heroBackground.svg);
     height: 710px;
     background-size: cover;
@@ -19,17 +18,14 @@
   img {
     object-fit: cover;
     width: 100%;
-    height: 100%;
   }
 
   .heroContent {
     display: flex;
     position: absolute;
     border-radius: 10px;
-    right: 0;
+    left: 50%;
     bottom: clamp(0vw, 5vw, 8vw);
-
-    margin: auto;
     flex-direction: column;
     justify-content: space-between;
     max-width: $mobile-l;
@@ -37,9 +33,7 @@
     background-color: $clr-white-second;
     padding: 37px 43px 37px 39px;
     margin: 20px;
-    @media (max-width: $tablet-L) {
-      max-width: 70%;
-    }
+
     @media (max-width: $mobile-l) {
       position: static;
       max-width: 100%;
@@ -53,14 +47,12 @@
       letter-spacing: 3px;
       color: $clr-grey;
     }
-
     h1 {
       font-family: $primary-font;
       font-weight: 700;
       font-size: clamp(20px, 1.5vw, 52px);
       line-height: clamp(24px, 4vw, 45px);
       color: $clr-golden;
-
       @media (max-width: $tablet-l) {
         color: $clr-golden;
       }
@@ -80,7 +72,7 @@
       color: $clr-white;
       background-color: $clr-golden;
       padding: clamp(10px, 1.5vw, 18px) clamp(10px, 2vw, 15px);
-      max-width: 222px;
+      max-width: 55%;
       margin-top: 18px;
     }
   }

@@ -1,5 +1,4 @@
 import styles from "./Hero.module.scss";
-import image from "@/assets/Hero/heroBackground.svg";
 
 const Hero = () => {
   return (
