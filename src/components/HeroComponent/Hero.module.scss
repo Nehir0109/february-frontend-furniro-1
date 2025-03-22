@@ -24,7 +24,7 @@
     display: flex;
     position: absolute;
     border-radius: 10px;
-    left: 50%;
+    right: clamp(100px, 2vw, 20px);
     bottom: clamp(0vw, 5vw, 8vw);
     flex-direction: column;
     justify-content: space-between;
@@ -32,7 +32,10 @@
     max-height: 443px;
     background-color: $clr-white-second;
     padding: 37px 43px 37px 39px;
-    margin: 20px;
+    margin: 20px 0 20px 20px;
+    @media (max-width: $tablet-L) {
+      right: 30px;
+    }
 
     @media (max-width: $mobile-l) {
       position: static;
