@@ -3,7 +3,7 @@ name: Netlify Deploy
 on:
   push:
     branches:
-      - master  # Trigger deployment on push to the 'master' branch
+      - master # Trigger deployment on push to the 'master' branch
 
 jobs:
   deploy:
@@ -16,13 +16,13 @@ jobs:
       - name: Set up Node.js and install dependencies
         uses: actions/setup-node@v2
         with:
-          node-version: '20'  # Specify your Node.js version
+          node-version: "20" # Specify your Node.js version
 
       - name: Install dependencies using Yarn
-        run: yarn install  # Use Yarn to install dependencies
+        run: yarn install # Use Yarn to install dependencies
 
       - name: Build the project
-        run: yarn build  # This should match your package.json build script
+        run: yarn build # This should match your package.json build script
 
       - name: Install Netlify CLI
         run: yarn global add netlify-cli
