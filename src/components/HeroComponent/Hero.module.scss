@@ -1,5 +1,5 @@
-@use "/src/styles/abstracts/variables.scss" as *;
-
+@use "@/styles/abstracts/variables.scss" as *;
+@use "@/styles/abstracts/mixins.scss" as *;
 .heroContainer {
   width: 100vw;
   position: relative;
@@ -9,7 +9,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    @media (max-width: $mobile-l) {
+
+    @include max($mobile-l) {
       height: 400px;
       width: 585px;
       background-position: 70%;
@@ -33,11 +34,11 @@
     background-color: $clr-white-second;
     padding: 37px 43px 37px 39px;
     margin: 20px 0 20px 20px;
-    @media (max-width: $tablet-L) {
+    @include max($tablet-L) {
       right: 30px;
     }
 
-    @media (max-width: $mobile-l) {
+    @include max($mobile-l) {
       position: static;
       max-width: 100%;
       margin: 0 auto;
@@ -56,7 +57,7 @@
       font-size: clamp(20px, 1.5vw, 52px);
       line-height: clamp(24px, 4vw, 45px);
       color: $clr-golden;
-      @media (max-width: $tablet-l) {
+      @include max($tablet-l) {
         color: $clr-golden;
       }
     }

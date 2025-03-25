@@ -4,7 +4,7 @@ import Hero from "../../components/HeroComponent/Hero";
 const HomePage = () => {
   return (
     <div>
-      <Hero sectionName="Hero Section" />
+      <Hero />
     </div>
   );
 };
