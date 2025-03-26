@@ -1,13 +1,13 @@
 import { Example } from "@/components/Example/Example";
 import "./style.scss";
 import { TopCategoriesSection } from "@/Components/TopCategoriesSection/TopCategories";
+import Hero from "../../components/HeroComponent/Hero";
 
 const HomePage = () => {
   return (
     <div>
-      <Example sectionName="Example Section" />
-      <Example sectionName="Feature Section" />
       <TopCategoriesSection />
+      <Hero />
     </div>
   );
 };
