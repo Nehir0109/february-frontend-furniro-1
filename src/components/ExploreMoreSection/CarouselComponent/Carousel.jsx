@@ -41,7 +41,7 @@ const Carousel = () => {
         860: { slidesPerView: 2.5},
         1200: { slidesPerView: 2.0 },
         1560: { slidesPerView: 2.5 },
-        1700: { slidesPerView: 3 },
+        1700: { slidesPerView: 2.5},
       }}
     >
       {rooms.map((room, index) => (

@@ -7,7 +7,7 @@ export const ExploreMoreSection = () => {
     <div className={styles.exploreMoreContainer}>
       <div className={styles.exploreMoreWrapper}>
 
-    
+ 
       <div span={10} className={styles.leftContent}>
         <div>
           <h2>50+ Beautiful rooms 
