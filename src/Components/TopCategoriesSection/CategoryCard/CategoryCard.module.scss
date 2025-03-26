@@ -1,0 +1,16 @@
+@use "@/styles/abstracts/variables" as *;
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  .cardImage {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    text-align: center;
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: clamp($fnt-size-lr, 2vw, $fnt-size-2xl);
+    line-height: 36px;
+  }
+}
