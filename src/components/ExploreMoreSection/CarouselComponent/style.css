@@ -1,11 +1,7 @@
 .swiper-button-prev {
   display: none;
 }
-/* .swiper-slide,
-.swiper-slide-next,
-.swiper-slide-prev {
-  max-width: 400px;
-} */
+
 .swiper-button-next:after {
   font-size: 24px;
   width: 7px;
@@ -66,6 +62,9 @@
 }
 :where(.css-dev-only-do-not-override-tjsggz).ant-col-14 {
   max-width: 70%;
+}
+.swiper-wrapper{
+  max-width: 700px;
 }
 .swiper-slide {
   width: 400px;

@@ -10,8 +10,11 @@ const ExploreCard = ({ room, isActive }) => {
       </div>
       {isActive && (
         <div className={styles.cardContent}>
-          <span>01 — Bed Room</span>
+          <div>
+             <span>01 — Bed Room</span>
           <h3>Inner Peace</h3>
+          </div>
+         
           <button className={styles.arrowBtn}>
             <img src={arrow} alt="Arrow" />
           </button>

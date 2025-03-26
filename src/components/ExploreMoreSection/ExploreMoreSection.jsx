@@ -5,9 +5,13 @@ import { Col } from "antd";
 export const ExploreMoreSection = () => {
   return (
     <div className={styles.exploreMoreContainer}>
+      <div className={styles.exploreMoreWrapper}>
+
+    
       <div span={10} className={styles.leftContent}>
         <div>
-          <h2>50+ Beautiful rooms inspiration</h2>
+          <h2>50+ Beautiful rooms 
+            inspiration</h2>
           <p>
             Our designer already made a lot of beautiful <br />
             prototipe of rooms that inspire you
@@ -18,6 +22,6 @@ export const ExploreMoreSection = () => {
       <Col className={styles.rightContent} span={14}>
         <Carousel />
       </Col>
-    </div>
+    </div>  </div>
   );
 };

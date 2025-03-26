@@ -25,6 +25,7 @@ const Carousel = () => {
     <Swiper
       style={{
         height: "582px",
+    
       }}
       modules={[Navigation, Pagination]}
       spaceBetween={20}
@@ -35,13 +36,18 @@ const Carousel = () => {
       loop={true}
       breakpoints={{
         0: { slidesPerView: 1 },
-        640: { slidesPerView: 1 },
-        1024: { slidesPerView: 2 },
-        1280: { slidesPerView: 2.5 },
+        500: { slidesPerView: 1.5 },
+        680: { slidesPerView: 2 },
+        860: { slidesPerView: 2.5},
+        1200: { slidesPerView: 2.0 },
+        1560: { slidesPerView: 2.5 },
+        1700: { slidesPerView: 3 },
       }}
     >
       {rooms.map((room, index) => (
-        <SwiperSlide key={room.id}>
+        <SwiperSlide 
+      
+        key={room.id}>
           <ExploreCard room={room} isActive={activeIndex === index} />
         </SwiperSlide>
       ))}

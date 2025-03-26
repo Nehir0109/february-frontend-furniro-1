@@ -28,14 +28,15 @@
     position: absolute;
     bottom: 48px;
     left: 24px;
-    width: 217px;
+    max-width: 217px;
     height: 130px;
     background-color: #f1f1f1;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-left: 32px;
-
+    flex-wrap: wrap;
+    padding-left:clamp(20px, 4vw, 32px);
+padding-right:clamp(20px, 4vw, 32px);
     @media (max-width: 400px) {
       width: 150px;
       padding-left: 20px;
