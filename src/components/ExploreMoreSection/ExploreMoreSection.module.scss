@@ -1,59 +1,57 @@
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/mixins.scss" as *;
+
 .exploreMoreContainer {
  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: #fcf8f3;
+  background-color:$clr-white-second;
   padding: 40px 0 40px 40px;
-margin-top: clamp(32px,5vw,65px);
+  margin-top: clamp(32px,5vw,65px);
 .exploreMoreWrapper{
   width: 100%;
   gap: 25px;
-display: flex;
-justify-content:flex-end;
+  display: flex;
+  justify-content:flex-end;
 
-@media (max-width: 1200px) {
+@include max ( $desktop-m) {
    flex-direction: column;
-justify-content: flex-start;
+   justify-content: flex-start;
 
   
 }
   .leftContent {
-   
     padding-left: clamp(20px, 4vw, 100px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
- 
     margin: 24px;
     h2 {
      
       font-weight: 700;
-      font-size: 40px;
+      font-size: $fnt-size-9xl;
       line-height: 120%;
       letter-spacing: 0%;
-      color: #3a3a3a;
+      color: $clr-grey;
     }
     p { 
       margin-top: 15px;
       font-weight: 500;
-      font-size: 16px;
+      font-size: $fnt-size-md;
       line-height: 150%;
       letter-spacing: 0%;
-      color: #acacac;
+      color: $clr-lightGrey;
     }
     .btn {
       margin-top: 25px;
       border: none;
-      background-color: #b88e2f;
+      background-color:$clr-golden;
       padding: 13px 25px;
-      color: white;
+      color: $clr-white-second;
     }
     .rightContent {
-  
-      // display: flex;
-      // justify-content: end;
       padding-top: 44px;
       padding-bottom: 44px;
 
