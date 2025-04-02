@@ -1,0 +1,126 @@
+@use "@/styles/abstracts/variables" as *;
+
+.footer {
+    margin: 0 auto;
+    font-family: $primary-font;
+    background-color: $clr-grey;
+    color: $clr-white;
+
+    .footerContainer {
+        padding: 40px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 80px;
+
+        .footerTitle {
+            font-size: $fnt-size-9xl;
+            font-weight: 700;
+            line-height: 100%;
+        }
+
+        .footerSectionContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            gap: 120px;
+
+            .footerSection {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+
+                .sectionTitle {
+                    font-size: $fnt-size-xl;
+                    font-weight: 700;
+                    line-height: 100%;
+                }
+
+                .sectionTitle::after {
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    background-color: $clr-rose;
+                    margin-top: 5px;
+                }
+
+                .link::after {
+                    width: 66px;
+                }
+
+                .help::after {
+                    width: 48px;
+                }
+
+                .locationTitle::after {
+                    width: 104px;
+                }
+
+                .newsletter::after {
+                    width: 128px;
+                }
+
+                .sections {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 20px;
+
+                    .section { 
+                        cursor: pointer;
+                        transition: 0.3s ease-in-out;
+                    }
+
+                    .section:hover {
+                        scale: 0.9;
+                    }
+                }
+
+                .inputSection {
+                    display: flex;
+                    flex-direction:row;
+                    gap: 40px;
+
+                    .footerInput{
+                        width: 200px;
+                        border-bottom: 1px solid $clr-white;
+                        color: $clr-white;
+                        font-size: $fnt-size-xs;
+                        font-weight: 400;
+                        line-height: 100%;
+                        gap: 1px;
+                    }
+                    .footerInput::placeholder {
+                        color: $clr-white;
+                        font-size: $fnt-size-xs;
+                        font-weight: 400;
+                        line-height: 100%;
+                    }
+
+                    .footerBtn {
+                        color: $clr-white;
+                        font-size: $fnt-size-xs;
+                        font-weight: 500;
+                        line-height: 100%;
+                        transition: 0.3s ease-in-out;
+                    }
+                    .footerBtn:hover {
+                        scale: 0.8;
+                    }
+                }
+            }
+        }
+        .copyright {
+            max-width: 1400px;
+            width: 100%;
+            height: auto;
+            border-top: 1px solid $clr-white;
+            padding-top: 30px;
+        }
+    }
+}
