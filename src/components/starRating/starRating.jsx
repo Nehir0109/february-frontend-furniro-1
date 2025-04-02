@@ -1,4 +1,4 @@
-import styles from "./starRating.module.scss";
+import styles from "./StarRating.module.scss";
 
 export const StarRating = ({ rating }) => {
   return (

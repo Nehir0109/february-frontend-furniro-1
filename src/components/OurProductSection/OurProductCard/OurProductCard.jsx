@@ -1,5 +1,5 @@
 import style from "./OurProductCard.module.scss";
-import { StarRating } from "../../starRating/starRating";
+import { StarRating } from "@/Components/StarRating/StarRating";
 
 export const OurProductCard = ({ product }) => {
   return (

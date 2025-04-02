@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProducts } from "../../../Utils/fetchProducts";
+import { fetchProducts } from "@/Utils/fetchProducts";
 import style from "./OurProductSection.module.scss";
 import { OurProductCard } from "./OurProductCard/OurProductCard";
 
@@ -9,7 +9,7 @@ export const OurProductSection = () => {
   useEffect(() => {
     const getProducts = async () => {
       const data = await fetchProducts();
-      setProducts(data.slice(0, 4));
+      setProducts(data.slice(0, 12));
     };
 
     getProducts();
