@@ -58,8 +58,12 @@
     @media screen and (max-width: 1385px){
         width: 100%;
     }
+    @media screen and (max-width: $tablet-L) {
+        gap: 20px;
+    }
     @media screen and (max-width: 780px) {
         max-width: 295px;
+        gap: 15px;
     }
 }
 
@@ -99,6 +103,13 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+
+    @media screen and (max-width: $tablet-L) {
+        gap: 15px;
+    }
+    @media screen and (max-width: 780px) {
+        gap: 10px;
+    }
 }
 
 .section {
