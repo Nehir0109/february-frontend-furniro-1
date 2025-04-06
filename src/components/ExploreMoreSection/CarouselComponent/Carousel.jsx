@@ -35,12 +35,13 @@ const Carousel = () => {
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       loop={true}
       breakpoints={{
-        0: { slidesPerView: 1 },
+        0: { slidesPerView:  1},
+        401: { slidesPerView: 1.2 },
         500: { slidesPerView: 1.5 },
         680: { slidesPerView: 2 },
         860: { slidesPerView: 2.5},
         1200: { slidesPerView: 2.0 },
-        1560: { slidesPerView: 2.5 },
+        1560: { slidesPerView: 2 },
         1700: { slidesPerView: 2.5},
       }}
     >

@@ -8,7 +8,7 @@ export const ExploreMoreSection = () => {
       <div className={styles.exploreMoreWrapper}>
 
  
-      <div span={10} className={styles.leftContent}>
+      <div  className={styles.leftContent}>
         <div>
           <h2>50+ Beautiful rooms 
             inspiration</h2>
@@ -19,7 +19,7 @@ export const ExploreMoreSection = () => {
         </div>
         <button className={styles.btn}>Explore More</button>
       </div>
-      <Col className={styles.rightContent} span={14}>
+      <Col className={styles.rightContent} >
         <Carousel />
       </Col>
     </div>  </div>

@@ -2,9 +2,7 @@
 .swiper-button-prev {
   display: none;
 }
-:where(.css-dev-only-do-not-override-1a3rktk).ant-col-14 {
-  max-width: 100%;
-}
+
 .swiper-button-next:after {
   font-size: 24px;
   width: 7px;
@@ -16,7 +14,18 @@
   display: flex;
   align-items: center;
   color: #b88e2f;
-  box-shadow: #00000029;
+  box-shadow: 0 2px 8px #00000029;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
 }
 
 .swiper-pagination-fraction,
@@ -31,6 +40,7 @@
   align-items: center;
   z-index: 15;
 }
+
 .pagination-container {
   position: absolute;
   bottom: 10px;
@@ -38,7 +48,6 @@
   display: flex;
   gap: 8px;
 }
-
 .swiper-pagination-bullet {
   background-color: #acacac;
   border-radius: 50px;
@@ -54,30 +63,35 @@
   box-shadow: 0 0 0px 1px #b88e2f;
 }
 
-.swiper-pagination {
-  position: absolute;
-  bottom: 20px;
-  right: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  z-index: 10;
-}
-:where(.css-dev-only-do-not-override-tjsggz).ant-col-14 {
-  max-width: 60%;
-}
 .swiper-wrapper {
-  max-width: 700px;
+  width: 1000px;
 }
+
 .swiper-slide {
   width: 400px;
 }
+
+:where(.css-dev-only-do-not-override-1a3rktk).ant-col-14 {
+  max-width: 100%;
+}
+
+:where(.css-dev-only-do-not-override-tjsggz).ant-col-14 {
+  max-width: 60%;
+  max-height: 400px;
+}
+@media (max-width: 1600px) {
+  .swiper-wrapper {
+    max-width: 700px;
+    width: 100%;
+  }
+}
+
 @media (max-width: 1200px) {
   :where(.css-dev-only-do-not-override-tjsggz).ant-col-14 {
     max-width: 100%;
   }
 }
+
 @media (max-width: 900px) {
   .swiper-pagination-fraction,
   .swiper-pagination-custom,
@@ -88,9 +102,26 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .swiper-pagination-bullet {
     background-color: #855a0a;
   }
 }
-
-
+@media (max-width: 400px) {
+  ._card_1e0pl_24 ._imageDiv_1e0pl_44 img {
+    width: 95%;
+    max-height: 80%;
+    
+  }:where(.css-dev-only-do-not-override-tjsggz).ant-col-14 {
+      
+      max-height: 400px;
+    }
+    .swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+ 
+  top: auto;
+  bottom: 150px;
+}
+}
