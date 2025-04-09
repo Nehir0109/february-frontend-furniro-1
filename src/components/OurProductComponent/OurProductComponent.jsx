@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { fetchProducts } from "@/Utils/fetchProducts";
-import style from "./OurProductSection.module.scss";
+import style from "./OurProductComponent.module.scss";
 import { OurProductCard } from "./OurProductCard/OurProductCard";
 
-export const OurProductSection = () => {
+export const OurProductComponent = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,8 +16,7 @@ export const OurProductSection = () => {
   }, []);
 
   return (
-    <div className={style.productSectionWrapper}>
-      <h2 className={style.productSectionTitle}>Our Products</h2>
+    <div className={style.productComponentWrapper}>
       <div className={style.cardGrid}>
         {products.map((product) => (
           <OurProductCard key={product.id} product={product} />

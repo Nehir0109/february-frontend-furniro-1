@@ -1,13 +1,13 @@
 import { Example } from "@/components/Example/Example";
 import "./style.scss";
-import { OurProductSection } from "@/components/OurProductSection/OurProductSection";
+import { OurProductComponent } from "@/Components/OurProductComponent/OurProductComponent";
 
 const HomePage = () => {
   return (
     <div>
       <Example sectionName="Example Section" />
       <Example sectionName="Feature Section" />
-      <OurProductSection />
+      <OurProductComponent />
     </div>
   );
 };
