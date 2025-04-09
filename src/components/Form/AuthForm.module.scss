@@ -1,0 +1,33 @@
+@use "@/styles/abstracts/variables" as *;
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family:$primary-font;
+}
+label {
+    color: $clr-grey;
+    font-size:$fnt-size-md;
+    font-weight: 500;
+    line-height: 100%;
+}
+input {
+    padding: 18px 20px;
+    border: 1px solid $clr-lightGrey;
+    border-radius: 15px;
+    gap: 10px;
+    color: $clr-grey;
+    font-size:$fnt-size-md;
+    font-weight: 400;
+    line-height: 100%;
+}
+input::placeholder{
+    color: $clr-lightGrey;
+    font-size:$fnt-size-md;
+    font-weight: 400;
+    line-height: 100%;
+}
+
