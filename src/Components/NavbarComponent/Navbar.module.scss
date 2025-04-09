@@ -1,23 +1,96 @@
 @use "@/styles/abstracts/variables" as *;
-.navbar{
+@use "@/styles/abstracts/mixins" as *;
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1290px;
+  margin: 30px auto;
+  padding: 0 20px;
+  position: relative;
+
+  .logoSection {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    .logo{
+        font-family: $secondary-font;
+        font-weight: 700;
+        font-size: $fnt-size-7xl;
+        line-height: 0;
+    }
+  } 
+
+  .navLinks {
     display: flex;
     justify-content: space-between;
-    max-width: 1290px;
-    margin:30px auto;
-    padding: 0 20px;
+    gap:75px;
+    @include  max($tablet-l) {
+      gap: 45px;
+    }
+    li{
+    text-align: center;
+     a {
+        color: $clr-grey;
+        font-family: $primary-font;
+        font-weight: 500;
+        font-size: $fnt-size-md;
+        line-height: 100%;    
+        &:hover {
+            font-size: 20px;
+            transition: all 0.3s ease-in;
+          }
+          
+    }
+  }
+  @include max($tablet-m) {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: $clr-white-second;
+    padding: 20px;
+    opacity: 0; 
+    transform: translateY(-20px);  
+    transition: opacity 0.5s ease, transform 0.8s ease;
+  }
+}
 
-    .logoSection{
-        display: flex;
-        gap: 5px;
+.show {
+  @include max($tablet-m) {
+    display: flex;
+    flex-direction: column;
+    opacity: 1; 
+    transform: translateY(10px); 
+  
+  }
+}
+
+  .hamburger {
+    cursor: pointer;
+    display: none; 
+    font-size: $fnt-size-8xl;
+    @include  max($tablet-m) {
+      display: block;
     }
-    .navLinks{
-        width: 430px;
-        display: flex;
-        justify-content: space-between;
+
+  }
+
+  .icons {
+    display: flex;
+    gap:45px;
+    align-items: center;
+    @include  max($tablet-l) {
+      gap: 15px;
     }
-    .icons{
-        width: 200px;
-        display: flex;
-        justify-content: space-between;
+    @include  max($tablet-m) {
+      display: none;
     }
+    img{
+      cursor: pointer;
+    }
+  }
 }
