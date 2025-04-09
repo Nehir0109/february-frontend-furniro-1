@@ -1,0 +1,23 @@
+@use "@/styles/abstracts/variables" as *;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1290px;
+    margin:30px auto;
+    padding: 0 20px;
+
+    .logoSection{
+        display: flex;
+        gap: 5px;
+    }
+    .navLinks{
+        width: 430px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .icons{
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
