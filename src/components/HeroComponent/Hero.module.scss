@@ -4,7 +4,7 @@
 .heroContainer {
   width: 100vw;
   position: relative;
-  padding-top: clamp(10px, 5vw, 65px);
+  // padding-top: clamp(10px, 5vw, 65px);
   padding-bottom: clamp(10px, 5vw, 65px);
   .heroBackground {
     background-image: url(../../assets/Hero/heroBackground.svg);
