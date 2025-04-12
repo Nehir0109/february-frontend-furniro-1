@@ -1,0 +1,154 @@
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/mixins" as *;
+.ModalContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  .ModalSidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 417px;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 30px;
+    background-color: #ffffff;
+    .topContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        font-family: $primary-font;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: $clr-grey;
+        margin-top: 8px;
+        margin-bottom: 25px;
+      }
+    }
+    .productsOfBasket {
+      margin-top: 34px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      height: 750px;
+      padding-right: 20px;
+      overflow-y: auto;
+      scrollbar-width: normal;
+      scrollbar-color: $clr-scroll $clr-scroll-gray;
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: $clr-scroll-gray;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: $clr-scroll;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: $clr-white;
+      }
+
+      .product {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .productImage {
+          width: 108px;
+          height: 105px;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+
+        .productContent {
+          height: 56px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 15px;
+        }
+        .productContent h6 {
+          font-family: $primary-font;
+          width: 130px;
+          text-align: start;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 100%;
+          letter-spacing: 0%;
+        }
+        .orderItem {
+          display: flex;
+          justify-content: space-between;
+          font-family: $primary-font;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          p {
+            font-family: $primary-font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: $clr-golden;
+          }
+        }
+      }
+    }
+    .subtotalContainer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-bottom: 25px;
+      .subTotal {
+        font-family: $primary-font;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+      span {
+        font-family: $primary-font;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: $clr-golden;
+      }
+    }
+
+    .buttonsContainer {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      .btn {
+        padding: 8px 30px;
+        border: 1px solid $clr-black;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: $primary-font;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+    }
+  }
+}
