@@ -1,0 +1,14 @@
+.star-rating {
+  display: flex;
+  gap: 4px;
+
+  .star {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+
+    &.filled {
+      color: #ff9900; // Tailwind yellow-500
+    }
+  }
+}
