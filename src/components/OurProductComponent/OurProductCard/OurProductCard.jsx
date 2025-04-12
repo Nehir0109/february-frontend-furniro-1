@@ -4,7 +4,7 @@ import { FaHeart, FaSearch, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
 
 export const OurProductCard = ({ product }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState([]);
 
   const toggleFavorite = () => {
     setIsFavorite((prev) => !prev);
