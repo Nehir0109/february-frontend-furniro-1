@@ -9,11 +9,11 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "./../Modal/Modal";
+import AddLocalStorage from "../AddLocalStorage";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  // !Transition eklenecek
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState("");
@@ -50,7 +50,7 @@ const Navbar = () => {
         onClick={toggleMenu}
         icon={isMenuOpen ? faTimes : faBars}
       />
-
+      {<AddLocalStorage />}
       <ul className={`${style.navLinks} ${isMenuOpen ? style.show : ""}`}>
         <li>
           <a href="/">Home</a>

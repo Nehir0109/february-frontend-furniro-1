@@ -21,6 +21,10 @@ const Modal = ({ closeModal, type }) => {
     }
   }, [type]);
 
+  const subtotal = items.reduce(
+    (acc, item) => acc + item.price * (item.quantity || 1),
+    0,
+  );
   const deleteItem = (id) => {
     const updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
@@ -42,11 +46,8 @@ const Modal = ({ closeModal, type }) => {
       case "compare":
         navigate("/product/:id");
         break;
-      case "seeMore":
-        navigate("/");
-        break;
       default:
-        "/";
+        navigate("/");
         break;
     }
   };
@@ -84,7 +85,7 @@ const Modal = ({ closeModal, type }) => {
                       <h6>{item.name}</h6>
                       {type === "shop" && (
                         <div className={style.orderItem}>
-                          <span>1</span> <span>×</span>
+                          <span>{item.quantity || 1}</span> <span>×</span>
                           <p>Rs.{item.price}</p>
                         </div>
                       )}
@@ -103,7 +104,7 @@ const Modal = ({ closeModal, type }) => {
             {type === "shop" && (
               <div className={style.subtotalContainer}>
                 <h6 className={style.subTotal}>Subtotal</h6>
-                <span>fiyat</span>
+                <span>Rs. {subtotal.toFixed(2)}</span>
               </div>
             )}
             <div className={style.buttonsContainer}>

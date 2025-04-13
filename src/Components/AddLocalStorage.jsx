@@ -6,9 +6,14 @@ const AddLocalStorage = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const baseItems = data.slice(0, 9);
 
-        const basket = data.slice(0, 5);
-        const favorites = data.slice(0, 9);
+        const basket = baseItems.map((item, index) => ({
+          ...item,
+          quantity: (index % 3) + 1,
+        }));
+
+        const favorites = baseItems;
 
         localStorage.setItem("favorites", JSON.stringify(favorites));
         localStorage.setItem("basket", JSON.stringify(basket));
@@ -17,6 +22,7 @@ const AddLocalStorage = () => {
       });
   }, []);
 
-  return <div>AddLocalStorage</div>;
+  return <div></div>;
 };
+
 export default AddLocalStorage;
