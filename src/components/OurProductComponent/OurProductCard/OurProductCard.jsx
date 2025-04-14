@@ -1,5 +1,5 @@
 import style from "./OurProductCard.module.scss";
-import { StarRating } from "@/Components/StarRating/StarRating";
+import { StarRating } from "@/components/StarRating/StarRating";
 import { FaHeart, FaSearch, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
 

@@ -1,8 +1,8 @@
 import { CategoryCard } from "./CategoryCard/CategoryCard";
 import style from "./TopCategories.module.scss";
-import diningRoom from "@/assets/Topcategories/Image-dining room.svg";
-import livingRoom from "@/assets/Topcategories/Image-living room.svg";
-import bedRoom from "@/assets/Topcategories/Image-bedroom.svg";
+import diningRoom from "@/assets/TopCategories/Image-dining-room.svg";
+import livingRoom from "@/assets/TopCategories/Image-living-room.svg";
+import bedRoom from "@/assets/TopCategories/Image-bedroom.svg";
 
 const categoryCardData = [
   { image: diningRoom, category: "Dining" },
