@@ -4,37 +4,25 @@ import clsImage from "./../../assets/ShoppingCard/basketIcon.svg";
 import basketIcon from "./../../assets/Navbar/closeModal.svg";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { localStorageUtility } from "../../../Utils/localStorageUtility";
+
 const Modal = ({ closeModal, type }) => {
   const [items, setItems] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
-    if (type === "shop") {
-      const storedBasket = localStorage.getItem("basket");
-      if (storedBasket) {
-        setItems(JSON.parse(storedBasket));
-      }
-    } else if (type === "favorites") {
-      const storedFavorites = localStorage.getItem("favorites");
-      if (storedFavorites) {
-        setItems(JSON.parse(storedFavorites));
-      }
-    }
+    const key = type === "shop" ? "basket" : "favorites";
+    const storedItems = localStorageUtility.get(key);
+    setItems(storedItems || []);
   }, [type]);
 
-  const subtotal = items.reduce(
-    (acc, item) => acc + item.price * (item.quantity || 1),
-    0,
-  );
   const deleteItem = (id) => {
     const updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
-    if (type === "shop") {
-      localStorage.setItem("basket", JSON.stringify(updatedItems));
-    } else if (type === "favorites") {
-      localStorage.setItem("favorites", JSON.stringify(updatedItems));
-    }
+
+    const key = type === "shop" ? "basket" : "favorites";
+    localStorage.setItem(key, JSON.stringify(updatedItems));
   };
-  const navigate = useNavigate();
+
   const handleButtonClick = (buttonType) => {
     switch (buttonType) {
       case "cart":
@@ -52,7 +40,13 @@ const Modal = ({ closeModal, type }) => {
     }
   };
 
+  const subtotal = items.reduce(
+    (acc, item) => acc + item.price * (item.quantity || 1),
+    0,
+  );
+
   const emptyText = type === "shop" ? "Cart is empty" : "Favorites is empty";
+
   if (type === "shop" || type === "favorites") {
     return (
       <div className={style.ModalContainer} onClick={closeModal}>
@@ -60,17 +54,12 @@ const Modal = ({ closeModal, type }) => {
           <div>
             <div className={style.topContainer}>
               <h1>{type === "shop" ? "Shopping Cart" : "Favorites"}</h1>
-
-              <button onClick={closeModal}>
-                {type === "shop" ? (
-                  <button onClick={() => goToShopPage()}>
-                    <img src={basketIcon} alt="basketIcon" />
-                  </button>
-                ) : (
-                  ""
-                )}
+              <button onClick={() => handleButtonClick("cart")}>
+                {" "}
+                {type === "shop" && <img src={basketIcon} alt="basketIcon" />}
               </button>
             </div>
+
             <hr />
             <div className={style.productsOfBasket}>
               {items.length > 0 ? (
@@ -141,8 +130,10 @@ const Modal = ({ closeModal, type }) => {
     );
   }
 };
+
 Modal.propTypes = {
-  closeModal: PropTypes.func.isRequired, // closeModal fonksiyonu zorunlu ve fonksiyon tipi olmalı
-  type: PropTypes.string.isRequired, // type prop'u zorunlu ve string tipi olmalı
+  closeModal: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
 };
+
 export default Modal;
