@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import style from "./Modal.module.scss";
-import clsImage from "./../../assets/ShoppingCard/basketIcon.svg";
-import basketIcon from "./../../assets/Navbar/closeModal.svg";
+import clsImage from "@/assets/ShoppingCard/basketIcon.svg";
+import basketIcon from "@/assets/Navbar/closeModal.svg";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import { localStorageUtility } from "../../../Utils/localStorageUtility";
+import { localStorageUtility } from "@/Utils/localStorageUtility";
 
 const Modal = ({ closeModal, type }) => {
   const [items, setItems] = useState([]);
