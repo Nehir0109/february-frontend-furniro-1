@@ -2,21 +2,30 @@ import style from "./OurProductCard.module.scss";
 import { StarRating } from "@/component/StarRating/StarRating";
 import { FaHeart, FaSearch, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
+import { localStorageUtility } from "@/Utils/localStorageUtility";
 
 export const OurProductCard = ({ product }) => {
-  const [isFavorite, setIsFavorite] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  const toggleFavorite = () => {
-    setIsFavorite((prev) => !prev);
-  };
+  const handleFavoriteClick = () => {
+      const favorites = localStorageUtility.get("favorites") || [];
+      if (favorites.some((item) => item.id === product.id)) {
+        const updatedFavorites = favorites.filter((item) => item.id !== product.id);
+        localStorageUtility.set("favorites", updatedFavorites);
+      } else {
+        localStorageUtility.set("favorites", [...favorites, product]);
+      }
+      
+      setIsFavorite(!isFavorite);
+    };
 
   return (
     <div className={style.cardWrapper}>
       <div className={style.cardImageDiv}>
         <img src={product.images} alt={product.name} className={style.cardImage} />
         <div className={style.hoverActions}>
-          <button className={style.iconButton} onClick={toggleFavorite}>
-            <FaHeart className={isFavorite ? style.filledHeart : ""} />
+          <button className={style.iconButton} onClick={handleFavoriteClick}>
+            <FaHeart className={isFavorite ? style.filledHeart :  " "} />
           </button>
           <button className={style.iconButton}>
             <FaSearch />
@@ -42,3 +51,5 @@ export const OurProductCard = ({ product }) => {
     </div>
   );
 };
+
+
