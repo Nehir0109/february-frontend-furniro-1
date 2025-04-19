@@ -53,3 +53,14 @@ export const OurProductCard = ({ product }) => {
 };
 
 
+OurProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    name: PropTypes.string.isRequired,
+    shortDescription: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    originalPrice: PropTypes.number,
+    rating: PropTypes.number,
+    images: PropTypes.string.isRequired,
+  }).isRequired,
+};

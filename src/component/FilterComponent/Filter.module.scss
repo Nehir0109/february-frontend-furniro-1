@@ -39,8 +39,13 @@
         letter-spacing: 0%;
         
       }
-      
-    }
+   
+    }   .toggleBtn{
+        font-size: 15px;
+        color:$clr-grey;
+        font-weight: 500;
+
+      }
     .accordionContent {
       display: flex;
       flex-direction: column;
