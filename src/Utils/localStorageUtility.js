@@ -8,4 +8,13 @@ export const localStorageUtility = {
       return null;
     }
   },
+
+  set: (key, value) => {
+    try {
+      const jsonString = JSON.stringify(value);
+      localStorage.setItem(key, jsonString);
+    } catch (error) {
+      console.error("LocalStorage Set Error:", error);
+    }
+  }
 };
