@@ -2,35 +2,32 @@
 @use "@/styles/abstracts/mixins" as *;
 
 .furnitureSection {
-  max-width: $desktop-m;
   margin: 0 auto;
-  padding: 64px 16px;
 }
 
 .header {
   text-align: center;
   margin-bottom: 48px;
-}
 
-.headerText {
-  color: $clr-lightGrey;
-  font-size: $fnt-size-xl;
-  font-weight: 600px;
-  margin-bottom: 5px;
-  font-family: $primary-font;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-}
-
-.headerTitle {
-  font-family: $primary-font;
-  font-size: $fnt-size-9xl;
-  font-weight: 700;
-  color: $clr-grey;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
+  .headerText {
+    color: $clr-lightGrey;
+    font-size: $fnt-size-xl;
+    font-weight: 600px;
+    margin-bottom: 5px;
+    font-family: $primary-font;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+  .headerTitle {
+    font-family: $primary-font;
+    font-size: $fnt-size-9xl;
+    font-weight: 700;
+    color: $clr-grey;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
 }
 
 .imageGallery {
@@ -38,26 +35,23 @@
   flex-direction: column;
   gap: 2px;
   overflow: hidden;
-}
-
-.imageRow {
-  display: flex;
-  width: 200%;
-  animation: slide 30s linear infinite;
-  gap: 9px;
-}
-
-.image {
-  width: calc(12.5% - 2px);
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  .imageRow {
+    display: flex;
+    width: 200%;
+    animation: slide 30s linear infinite;
+    gap: 9px;
+  }
+  .image {
+    width: calc(12.5% - 2px);
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
 }
 
 @keyframes slide {
