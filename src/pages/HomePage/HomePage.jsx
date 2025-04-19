@@ -1,12 +1,13 @@
 import "./style.scss";
-import { TopCategoriesSection } from "@/components/TopCategoriesSection/TopCategories";
-import Hero from "@/components/HeroComponent/Hero";
-import { ExploreMoreSection } from "@/components/ExploreMoreSection/ExploreMoreSection";
-import AllProducts from "@/Components/AllProductsComponent/AllProducts";
+import { TopCategoriesSection } from "@/component/TopCategoriesSection/TopCategories";
+import Hero from "@/component/HeroComponent/Hero";
+import { ExploreMoreSection } from "@/component/ExploreMoreSection/ExploreMoreSection";
+import AllProducts from "@/component/AllProductsComponent/AllProducts";
 
 const HomePage = () => {
   return (
     <div>
+      {/* <Modal/> */}
       <Hero />
       <TopCategoriesSection />
       <AllProducts />
