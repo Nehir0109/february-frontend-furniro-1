@@ -3,6 +3,7 @@ import { StarRating } from "@/component/StarRating/StarRating";
 import { FaHeart, FaSearch, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
 import { localStorageUtility } from "@/Utils/localStorageUtility";
+import PropTypes from 'prop-types';
 
 export const OurProductCard = ({ product }) => {
   const [isFavorite, setIsFavorite] = useState(false);

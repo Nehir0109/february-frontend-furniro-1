@@ -1,11 +1,17 @@
 @use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/mixins" as *;
+
 
 .filterContainer {
   max-width: 500px;
-  width: 100%;
+  // width: 100%;
   border: 1px solid #f1f1f1;
   border-radius: 10px;
   padding: 0 12px 15px;
+  margin-left: 20px;
+  @include max($tablet-l) {
+  margin: auto;
+     }
   .roomContainer {
     display: flex;
     justify-content: space-between;
