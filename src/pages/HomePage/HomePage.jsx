@@ -1,15 +1,15 @@
 import "./style.scss";
-import { OurProductComponent } from "@/components/OurProductComponent/OurProductComponent";
 import { TopCategoriesSection } from "@/components/TopCategoriesSection/TopCategories";
-import Hero from "../../components/HeroComponent/Hero";
+import Hero from "@/components/HeroComponent/Hero";
 import { ExploreMoreSection } from "@/components/ExploreMoreSection/ExploreMoreSection";
+import AllProducts from "@/Components/AllProductsComponent/AllProducts";
 
 const HomePage = () => {
   return (
     <div>
       <Hero />
       <TopCategoriesSection />
-      <OurProductComponent />
+      <AllProducts />
       <ExploreMoreSection />
     </div>
   );
