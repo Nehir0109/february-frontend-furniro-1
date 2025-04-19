@@ -2,7 +2,9 @@ import "./style.scss";
 import { TopCategoriesSection } from "@/component/TopCategoriesSection/TopCategories";
 import Hero from "@/component/HeroComponent/Hero";
 import { ExploreMoreSection } from "@/component/ExploreMoreSection/ExploreMoreSection";
+import FurnitureSection from "@/components/FurnitureShareSection/FurnitureSection";
 import AllProducts from "@/component/AllProductsComponent/AllProducts";
+
 
 const HomePage = () => {
   return (
@@ -12,6 +14,7 @@ const HomePage = () => {
       <TopCategoriesSection />
       <AllProducts />
       <ExploreMoreSection />
+      <FurnitureSection />
     </div>
   );
 };
