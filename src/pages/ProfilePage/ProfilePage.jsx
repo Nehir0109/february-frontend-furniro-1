@@ -1,7 +1,12 @@
+import PageHeader from "../../component/PageHeader/PageHeader";
 import "./style.scss";
 
 const ProfilePage = () => {
-  return <div>Profile</div>;
+  return (
+    <div>
+      <PageHeader />
+    </div>
+  );
 };
 
 export default ProfilePage;
