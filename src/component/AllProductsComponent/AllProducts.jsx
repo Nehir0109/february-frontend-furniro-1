@@ -4,6 +4,7 @@ import Filter from "../FilterComponent/Filter";
 import { OurProductComponent } from "../OurProductComponent/OurProductComponent";
 import { fetchProducts } from "@/Utils/fetchProducts";
 import { Spin } from "antd";
+import PropTypes from "prop-types";
 
 const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [allProducts, setAllProducts] = useState([]);
@@ -125,6 +126,11 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
       )}
     </div>
   );
+};
+AllProducts.propTypes = {
+  showTitle: PropTypes.bool,
+  showSeeMore: PropTypes.bool,
+  showPagination: PropTypes.bool,
 };
 
 export default AllProducts;
