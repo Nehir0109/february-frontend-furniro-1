@@ -11,7 +11,7 @@ const HomePage = () => {
       {/* <Modal/> */}
       <Hero />
       <TopCategoriesSection />
-      <AllProducts />
+      <AllProducts showTitle={true} showSeeMore={true} showPagination={false} />
       <ExploreMoreSection />
       <FurnitureSection />
     </div>

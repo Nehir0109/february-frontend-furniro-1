@@ -1,7 +1,12 @@
+import PageHeader from "../../component/PageHeader/PageHeader";
 import "./style.scss";
 
 const CartPage = () => {
-  return <div>CartPage</div>;
+  return (
+    <div>
+      <PageHeader />
+    </div>
+  );
 };
 
 export default CartPage;
