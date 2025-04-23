@@ -139,32 +139,55 @@
     transform: translateY(0);
   }
 }
-@media (min-width: 640px) {
+
+@media (max-width: 768px) {
   .containerMoreInfo {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .tabButton {
-    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .tabContent {
+    font-size: 0.8rem;
+  }
+
+  .reviewItem {
+    padding: 1rem;
+  }
+
+  .reviewerImage {
+    width: 40px;
+    height: 40px;
   }
 
   .imageGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 768px) {
-  .tabContainer {
-    flex-wrap: nowrap;
-  }
-
+@media (max-width: 480px) {
   .tabButton {
-    flex-grow: 0;
+    font-size: 0.75rem;
+    padding: 0.5rem;
   }
-}
 
-@media (min-width: 1024px) {
-  .containerMoreInfo {
-    padding: 2rem 3rem;
+  .tabContent {
+    font-size: 0.75rem;
+  }
+
+  .reviewItem {
+    padding: 0.75rem;
+  }
+
+  .reviewerImage {
+    width: 35px;
+    height: 35px;
+  }
+
+  .imageGrid {
+    grid-template-columns: 1fr;
   }
 }
