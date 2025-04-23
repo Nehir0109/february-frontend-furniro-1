@@ -1,6 +1,7 @@
 import style from "./FeatureSection.module.scss"
 import { FeatureCard } from "@./FeatureCard/FeatureCard"
 // rafce kısayol tuşu
+
 const featureCards = [
   {
    img:"src/assets/FeatureCard/trophy.png",
@@ -23,14 +24,15 @@ const featureCards = [
     name : "Dedicated support"
    }
 ]
+
 export const FeatureSection = ( ) =>{
-  return {
-    <div>
+  return (
+    <div className="cards">
     {featureCards.map((feature,index)=>{
       <FeatureCard key={index} {...feature} />
     })}
-    </div>
+    </div>)
   };
-};
+
 
 export default FeatureSection
