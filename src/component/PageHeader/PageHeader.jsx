@@ -1,8 +1,8 @@
-import style from "./Pageheader.module.scss";
+import style from "./PageHeader.module.scss";
 import Logo from "@/assets/ShopPage/logo.svg";
 import { useLocation } from "react-router-dom";
 import BreadcrumbBanner from "../BreadcrumbBanner/BreadcrumbBanner";
-import capitalizeFirstLetter from "./../../Utils/capitalizeFirstLetter";
+import capitalizeFirstLetter from "@/Utils/capitalizeFirstLetter";
 const PageHeader = () => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((path) => path);
