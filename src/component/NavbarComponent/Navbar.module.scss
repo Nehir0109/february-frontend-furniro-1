@@ -1,7 +1,6 @@
 @use "@/styles/abstracts/variables" as *;
 @use "@/styles/abstracts/mixins" as *;
 
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -10,127 +9,124 @@
   margin: 30px auto;
   padding: 0 20px;
   position: relative;
-   @include  max($tablet-l) {
-      gap: 45px;
-    }
+  @include max($tablet-l) {
+    gap: 45px;
+  }
   .logoSection {
     display: flex;
     align-items: center;
     gap: 5px;
-    .logo{
-        font-family: $secondary-font;
-        font-weight: 700;
-        font-size: $fnt-size-7xl;
-        line-height: 0;
+    .logo {
+      font-family: $secondary-font;
+      font-weight: 700;
+      font-size: $fnt-size-7xl;
+      line-height: 0;
     }
-  } 
+  }
 
   .navLinks {
     display: flex;
     justify-content: space-between;
-    gap:75px;
+    gap: 75px;
     z-index: 5;
-    @include  max($tablet-l) {
+    @include max($tablet-l) {
       gap: 45px;
     }
-    li{
-    text-align: center;
-    a {
-      color: $clr-grey;
-      font-family: $primary-font;
-      font-weight: 500;
-      font-size: $fnt-size-md;
-      line-height: 100%;    
-      transition: all 0.3s ease-in;
-    
-      &:hover {
-        font-size: 24px;
+    li {
+      text-align: center;
+      a {
+        color: $clr-grey;
+        font-family: $primary-font;
+        font-weight: 500;
+        font-size: $fnt-size-md;
+        line-height: 100%;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+          font-size: 24px;
+        }
       }
     }
-    
+    @include max($tablet-l) {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      background-color: $clr-white-second;
+      padding: 20px;
+      opacity: 1;
+      transform: translateY(-20px);
+      display: none;
+      transition:
+        display 0.5s ease,
+        transform 0.8s ease;
+    }
   }
-  @include max($tablet-l) {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    background-color: $clr-white-second;
-    padding: 20px;
-    opacity: 0; 
-    transform: translateY(-20px);  
-    transition: opacity 0.5s ease, transform 0.8s ease;
-  }
-}
 
-.show {
-  @include max($tablet-l) {
-    display: flex;
-    flex-direction: column;
-    opacity: 1; 
-    transform: translateY(20px); 
-  
+  .show {
+    @include max($tablet-l) {
+      display: flex;
+      flex-direction: column;
+      transform: translateY(20px);
+    }
   }
-}
 
   .hamburger {
     cursor: pointer;
-    display: none; 
+    display: none;
     font-size: $fnt-size-8xl;
     @include max($tablet-l) {
       display: block;
     }
-
   }
 
   .icons {
     display: flex;
-    gap:45px;
+    gap: 45px;
     align-items: center;
-    @include  max($tablet-l) {
+    @include max($tablet-l) {
       gap: 15px;
     }
     @include max($tablet-l) {
       display: none;
     }
-    li{
+    li {
       align-items: inherit;
     }
-    img{
+    img {
       background-size: cover;
       cursor: pointer;
     }
-    }
-    .hide{
-      display: none;
-    }
-  
-   .searchContainer {
-      position: absolute;
-      top: 110%;
-      right: 40px;
-      z-index: 5;
-    
-      input {
-        padding: 10px 25px;
-        border-radius: 20px;
-        font-size: $fnt-size-md;
-        font-family: $primary-font;
-        border: 1px solid rgb(190, 188, 188);
-        background-color: #ecebea;
-        &::placeholder {
-          color: white;
-        }
-    
-        &:focus {
-          outline: none;
-          box-shadow: 0 0 10px grey;
-         
-        }
-        
+  }
+  .hide {
+    display: none;
+  }
+
+  .searchContainer {
+    position: absolute;
+    top: 110%;
+    right: 40px;
+    z-index: 5;
+
+    input {
+      padding: 10px 25px;
+      border-radius: 20px;
+      font-size: $fnt-size-md;
+      font-family: $primary-font;
+      border: 1px solid rgb(190, 188, 188);
+      background-color: #ecebea;
+      &::placeholder {
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 10px grey;
+      }
     }
     @include max($tablet-l) {
-     display: none;
+      display: none;
     }
-  }    
+  }
 }
