@@ -49,7 +49,7 @@ const Navbar = () => {
         onClick={toggleMenu}
         icon={isMenuOpen ? faTimes : faBars}
       />
-      <ul className={`${style.navLinks} ${isMenuOpen ? style.show : ""}`}>
+      <ul className={`${style.navLinks} ${isMenuOpen ? style.show : style.hide}`}>
         <li>
           <a href="/">Home</a>
         </li>

@@ -63,7 +63,9 @@
         transform 0.8s ease;
     }
   }
-
+  .hide {
+    display: none;
+  }
   .show {
     @include max($tablet-l) {
       display: flex;
