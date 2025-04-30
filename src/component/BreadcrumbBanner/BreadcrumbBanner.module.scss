@@ -1,0 +1,15 @@
+@use "@/styles/abstracts/variables" as *;
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  .breadcrumbItem a {
+    font-weight: 500;
+  }
+  .breadcrumbItem span {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+}

@@ -1,8 +1,9 @@
 import "./style.scss";
-import { OurProductComponent } from "@/component/OurProductComponent/OurProductComponent";
 import { TopCategoriesSection } from "@/component/TopCategoriesSection/TopCategories";
 import Hero from "@/component/HeroComponent/Hero";
 import { ExploreMoreSection } from "@/component/ExploreMoreSection/ExploreMoreSection";
+import FurnitureSection from "@/component/FurnitureShareSection/FurnitureSection";
+import AllProducts from "@/component/AllProductsComponent/AllProducts";
 
 const HomePage = () => {
   return (
@@ -10,8 +11,9 @@ const HomePage = () => {
       {/* <Modal/> */}
       <Hero />
       <TopCategoriesSection />
-      <OurProductComponent />
+      <AllProducts showTitle={true} showSeeMore={true} showPagination={false} />
       <ExploreMoreSection />
+      <FurnitureSection />
     </div>
   );
 };
