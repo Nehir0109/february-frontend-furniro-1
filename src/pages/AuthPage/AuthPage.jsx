@@ -1,7 +1,6 @@
-import { useState } from "react";
 import AuthForm from "../../components/Form/AuthForm";
 import style from "./AuthPage.module.scss";
-import { useNavigate , useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const AuthPage = () => {
   const navigate = useNavigate();
@@ -17,19 +16,21 @@ const AuthPage = () => {
       <div className={style.authPageContent}>
         <section className={style.contentContainer}>
           <div className={style.tabContainer}>
-            <button 
-              className={`${style.tab} ${activeTab === "login" ? style.active : "" }`} 
-              onClick={() => handleTabNavigation("/auth?type=login")}>
-                Login
+            <button
+              className={`${style.tab} ${activeTab === "login" ? style.active : ""}`}
+              onClick={() => handleTabNavigation("/auth?type=login")}
+            >
+              Login
             </button>
 
-            <button 
-              className={`${style.tab} ${activeTab === "signup" ? style.active : "" }`} 
-              onClick={() => handleTabNavigation("/auth?type=signup")}>
-                Signup
+            <button
+              className={`${style.tab} ${activeTab === "signup" ? style.active : ""}`}
+              onClick={() => handleTabNavigation("/auth?type=signup")}
+            >
+              Signup
             </button>
           </div>
-          <AuthForm/>
+          <AuthForm />
         </section>
       </div>
     </div>
