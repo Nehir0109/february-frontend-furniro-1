@@ -1,13 +1,19 @@
-import { Example } from "@/components/Example/Example";
 import "./style.scss";
-import { TopCategoriesSection } from "@/Components/TopCategoriesSection/TopCategories";
-import Hero from "../../components/HeroComponent/Hero";
+import { TopCategoriesSection } from "@/component/TopCategoriesSection/TopCategories";
+import Hero from "@/component/HeroComponent/Hero";
+import { ExploreMoreSection } from "@/component/ExploreMoreSection/ExploreMoreSection";
+import FurnitureSection from "@/component/FurnitureShareSection/FurnitureSection";
+import AllProducts from "@/component/AllProductsComponent/AllProducts";
 
 const HomePage = () => {
   return (
     <div>
-      <TopCategoriesSection />
+      {/* <Modal/> */}
       <Hero />
+      <TopCategoriesSection />
+      <AllProducts showTitle={true} showSeeMore={true} showPagination={false} />
+      <ExploreMoreSection />
+      <FurnitureSection />
     </div>
   );
 };

@@ -1,0 +1,34 @@
+@use "@/styles/abstracts/variables" as *;
+
+.exampleContainer {
+  display: flex;
+  gap: 20px;
+  background-color: grey;
+  width: 50%;
+  padding: 40px;
+  border-radius: 20px;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: $clr-grey;
+
+  .logoReact {
+    width: 50px;
+    height: 50px;
+  }
+  .exampleButton {
+    display: block;
+    padding: 20px;
+
+    border-radius: 40px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      scale: 1.8;
+      background-color: grey;
+    }
+  }
+}

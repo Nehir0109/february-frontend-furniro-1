@@ -1,0 +1,76 @@
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/mixins.scss" as *;
+
+.exploreMoreContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: $clr-white-second;
+  padding: 40px 0px 40px 0px;
+  margin-top: clamp(32px, 5vw, 65px);
+
+  @include max($mobile-ms) {
+    padding-right: 20px;
+  }
+  .exploreMoreWrapper {
+    width: 100%;
+    gap: 25px;
+    display: flex;
+    justify-content: flex-end;
+
+    @include max($desktop-m) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .leftContent {
+      width: 700px;
+
+      padding-left: clamp(0px, 4vw, 100px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 24px;
+
+      @include max($desktop-m) {
+        width: 100%;
+        margin: 0 24px;
+      }
+
+      h2 {
+        font-weight: 700;
+        font-size: clamp(24px, 4vw, 38px);
+        line-height: 120%;
+        letter-spacing: 0%;
+        color: $clr-grey;
+        padding-right: 20px;
+      }
+      p {
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: $fnt-size-md;
+        line-height: 150%;
+        letter-spacing: 0%;
+        color: $clr-lightGrey;
+        padding-right: 20px;
+      }
+      .btn {
+        margin-top: 25px;
+        border: none;
+        background-color: $clr-golden;
+        padding: 13px 25px;
+        color: $clr-white-second;
+      }
+      .rightContent {
+        padding-top: 44px;
+        padding-bottom: 44px;
+        min-width: 1000px;
+        @include max($desktop-m) {
+          width: 100%;
+          height: fit-content;
+        }
+      }
+    }
+  }
+}
