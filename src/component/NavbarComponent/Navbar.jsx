@@ -40,16 +40,8 @@ const Navbar = () => {
 
   return (
     <nav className={style.navbar}>
-      <div className={style.logoSection}>
-        <img src={logo} alt="logo" />
-        <h1 className={style.logo}>Furniro</h1>
-      </div>
-      <FontAwesomeIcon
-        className={style.hamburger}
-        onClick={toggleMenu}
-        icon={isMenuOpen ? faTimes : faBars}
-      />
-      <ul className={`${style.navLinks} ${isMenuOpen ? style.show : ""}`}>
+      {" "}
+      <ul className={`${style.nav} ${isMenuOpen ? style.show : style.hide}`}>
         <li>
           <a href="/">Home</a>
         </li>
@@ -63,7 +55,29 @@ const Navbar = () => {
           <a href="/contact">Contact</a>
         </li>
       </ul>
-
+      <div className={style.logoSection}>
+        <img src={logo} alt="logo" />
+        <h1 className={style.logo}>Furniro</h1>
+      </div>
+      <FontAwesomeIcon
+        className={style.hamburger}
+        onClick={toggleMenu}
+        icon={isMenuOpen ? faTimes : faBars}
+      />
+      <ul className={`${style.navLinks} `}>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/shop">Shop</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
       <ul className={style.icons}>
         <li>
           <button onClick={goToProfile}>
@@ -86,7 +100,6 @@ const Navbar = () => {
           </button>
         </li>
       </ul>
-
       {isSearchOpen && (
         <div className={style.searchContainer}>
           <input type="text" placeholder="Search..." />
