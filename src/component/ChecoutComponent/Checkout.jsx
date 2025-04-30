@@ -1,12 +1,44 @@
-import React from "react";
 import styles from "./Checkout.module.scss";
+import { useEffect, useState } from "react";
+import { localStorageUtility } from "@/Utils/localStorageUtility";
+import calculateTotalPrice from "@/Utils/calculateTotalPrice";
+
+const formFields = [
+  { label: "Company Name (Optional)", name: "companyName", type: "text" },
+  {
+    label: "Country / Region",
+    name: "countryRegion",
+    type: "select",
+    options: ["Sri Lanka", "Türkiye", "Germany", "USA"],
+  },
+  { label: "Street Address", name: "streetAddress", type: "text" },
+  { label: "Town / City", name: "townCity", type: "text" },
+  { label: "Province", name: "province", type: "select", options: ["Western Province"] },
+  { label: "ZIP Code", name: "zipCode", type: "text" },
+  { label: "Phone", name: "phone", type: "text" },
+  { label: "Email Address", name: "emailAddress", type: "email" },
+  {
+    label: "Additional Information",
+    name: "additionalInformation",
+    type: "text",
+    placeholder: "Additional information",
+  },
+];
 
 const CheckoutComponent = () => {
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const storedCart = localStorageUtility.get("cart");
+    if (storedCart) {
+      setCartItems(storedCart);
+    }
+  }, []);
+  const total = calculateTotalPrice(cartItems);
   return (
     <div className={styles.container}>
       <div className={styles.form}>
         <h2 className={styles.heading}>Billing details</h2>
-
         <form className={styles.formLayout}>
           <div className={styles.row}>
             <div className={styles.group}>
@@ -19,82 +51,51 @@ const CheckoutComponent = () => {
             </div>
           </div>
 
-          <div className={styles.group}>
-            <label htmlFor="company">Company Name (Optional)</label>
-            <input id="company" type="text" />
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="country">Country / Region</label>
-            <select id="country">
-              <option>Sri Lanka</option>
-              <option>Türkiye</option>
-            </select>
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="street">Street address</label>
-            <input id="street" type="text" />
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="city">Town / City</label>
-            <input id="city" type="text" />
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="province">Province</label>
-            <select id="province">
-              <option>Western Province</option>
-            </select>
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="zip">ZIP code</label>
-            <input id="zip" type="text" />
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="phone">Phone</label>
-            <input id="phone" type="text" />
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="email">Email address</label>
-            <input id="email" type="email" />
-          </div>
-
-          <div className={styles.group}>
-            <label htmlFor="additionalInfo">Additional Information</label>
-            <input id="additionalInfo" type="text" placeholder="Additional information" />
-          </div>
+          {formFields.map((field) => (
+            <div key={field.name} className={styles.group}>
+              <label htmlFor={field.name}>{field.label}</label>
+              {field.type === "select" ? (
+                <select id={field.name}>
+                  {field.options?.map((option) => (
+                    <option key={option}>{option}</option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  id={field.name}
+                  type={field.type}
+                  placeholder={field.placeholder || ""}
+                />
+              )}
+            </div>
+          ))}
         </form>
       </div>
-
       <div className={styles.summary}>
         <div className={styles.summaryHeader}>
           <div className={styles.summaryTitle}>
             <h2>Product</h2>
-            <h2>Subotal</h2>
+            <h2>Subtotal</h2>
           </div>
 
-          <div className={styles.summaryItem}>
-            <div>
-              <span className={styles.productName}>Agggood sofa</span>
-              <span> × 1</span>
+          {cartItems.map((item) => (
+            <div key={item.id} className={styles.summaryItem}>
+              <div>
+                <span className={styles.productName}>{item.name}</span>
+                <span> × {item.quantity}</span>
+              </div>
+              <span>${item.price * item.quantity}</span>
             </div>
-
-            <span>$250,000</span>
-          </div>
+          ))}
 
           <div className={styles.summaryItem}>
             <span>Subtotal</span>
-            <span>$250,000</span>
+            <span>${total}</span>
           </div>
 
           <div className={styles.summaryItem}>
             <span>Total</span>
-            <strong>$250,000</strong>
+            <strong>${total}</strong>
           </div>
         </div>
 
@@ -109,6 +110,7 @@ const CheckoutComponent = () => {
             cleared in our account.
           </p>
         </div>
+
         <div className={styles.radio}>
           <label>
             <input type="radio" name="payment" />
