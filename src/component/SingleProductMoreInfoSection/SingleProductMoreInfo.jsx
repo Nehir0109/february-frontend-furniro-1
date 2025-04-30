@@ -7,14 +7,16 @@ const SingleProductMoreInfo = () => {
   const reviews = [
     {
       name: "James Wilson",
-      image: "https://siga-aluminio.com.mx/wp-content/uploads/2019/01/person4.jpg",
+      image:
+        "https://www.masslive.com/resizer/v2/IRAEB2NMIBA3BFJGIOJFIP3SQE.jpeg?auth=fb8168e59d0b38c6d91fe94d4456017846189c1220a34113d70c75986bd8fa14&width=1280&quality=90",
       alt: "Profile picture of James Wilson",
       rating: 5,
       text: "The LuxeLounge Recliner is a game-changer! The leather is buttery soft, and the power recline feature is smooth and quiet. I love being able to charge my phone while relaxing. Best purchase I&apos;ve made in years!",
     },
     {
       name: "Sophia Martinez",
-      image: "https://siga-aluminio.com.mx/wp-content/uploads/2019/01/person2.jpg",
+      image:
+        "https://res-console.cloudinary.com/dvwwqwl8f/thumbnails/v1/image/upload/v1746025195/c2FtcGxlcy91cHNjYWxlLWZhY2UtMQ==/drilldown",
       alt: "Profile picture of Sophia Martinez",
       rating: 4.5,
       text: "This recliner is incredibly comfortable and looks great in our living room. The only reason I&apos;m not giving it 5 stars is that it took a bit of effort to assemble. Once set up, though, it&apos;s been perfect!",
