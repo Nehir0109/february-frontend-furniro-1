@@ -9,16 +9,13 @@
 
     @media (max-width:1110px){
         
-            display: grid;
-            grid-template-columns: auto auto;
-        
-      
+    display: grid;
+    grid-template-columns: auto auto;
     }
 
     @media (max-width:628px){
-        
-            display: grid;
-            grid-template-columns: auto ;
+     display: grid;
+     grid-template-columns: auto ;
         
     }
 }
@@ -26,6 +23,7 @@
 .featureCards {
     display: flex;
     justify-content: center;
+    gap: 10px;
 
     img {
         height: 60px;
@@ -58,21 +56,3 @@
 }
 
 
-// @media (max-width:1110px){
-//     .cards{
-//         display: grid;
-//         grid-template-columns: auto auto;
-//     }
-//    .featureCards:nth-child(3){
-//     margin-left: -65px;
-//    }
-//    .featureCards:nth-child(4){
-//     margin-left: -65px;
-//    }
-// }
-// @media (max-width:628px){
-//     .cards{
-//         display: grid;
-//         grid-template-columns: auto ;
-//     }
-// }
