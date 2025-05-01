@@ -26,11 +26,13 @@ name: "Dedicated support",
 
 export const FeatureSection = () => {
 return (
+<section className={style.wrapperFeature} >
 <div className={style.cards}>
 {featureCards.map((feature, index) => (
 <FeatureCard key={index} featureCard={feature} />
 ))}
 </div>
+</section>
 );
 };
 

@@ -2,6 +2,7 @@
 
 import style from "./FeatureCard.module.scss";
 
+
 const FeatureCard = ({ featureCard }) => {
 return (
 <div className={style.featureCard}>
