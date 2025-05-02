@@ -1,4 +1,4 @@
-import AuthForm from "../../components/Form/AuthForm";
+import AuthForm from "../../component/Form/AuthForm";
 import style from "./AuthPage.module.scss";
 import { useNavigate, useSearchParams } from "react-router-dom";
 

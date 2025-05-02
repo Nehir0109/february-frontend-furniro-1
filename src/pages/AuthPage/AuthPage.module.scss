@@ -26,12 +26,19 @@
                 width: 100%;
 
                 .tab{
-                    color:$clr-lightGrey;
+                    background-color: $clr-lightGrey;
+                    color:white;
                     font-size: $fnt-size-xl;
                     font-weight: 500;
+                    border: 1px solid $clr-lightGrey;
+                    border-radius: 10px;
+                    width: 150px;
+                    height: 48px;
                 }
                 .active{
-                    color: $clr-golden;
+                    color: white;
+                    background-color: $clr-golden;
+                    border: 1px solid $clr-golden;
                 }
             }
         }
