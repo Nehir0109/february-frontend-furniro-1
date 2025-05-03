@@ -1,5 +1,5 @@
-import { Link, useLocation, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
 import arrow from "@/assets/ShopPage/arrow.svg";
 import line from "@/assets/ShopPage/line.png";
 import capitalizeFirstLetter from "@/Utils/capitalizeFirstLetter";
@@ -8,21 +8,17 @@ import { fetchProducts } from "@/Utils/fetchProducts";
 
 const SingleProductNavigation = () => {
   const [productName, setProductName] = useState("");
-  const location = useLocation();
   const { id } = useParams();
-  const pathnames = location.pathname.split("/").filter((path) => path);
 
-  useEffect(() => {
-    const getProduct = async () => {
-      if (id) {
-        const product = await fetchProducts(id);
-        if (product?.name) {
-          setProductName(product.name);
-        }
+  const getProduct = async () => {
+    if (id) {
+      const product = await fetchProducts(id);
+      if (product?.name) {
+        setProductName(product.name);
       }
-    };
-    getProduct();
-  }, [id]);
+    }
+  };
+  getProduct();
 
   return (
     <div>
@@ -30,26 +26,17 @@ const SingleProductNavigation = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        {pathnames.map((name, index) => {
-          const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
-          const isLast = index === pathnames.length - 1;
-
-          return (
-            <li key={name}>
-              <img src={arrow} alt="arrow" className={style.arrow} />
-              {isLast ? (
-                <span className={style.productName}>
-                  <img className={style.line} src={line} alt="line" />
-                  {productName
-                    ? capitalizeFirstLetter(productName)
-                    : capitalizeFirstLetter(name)}
-                </span>
-              ) : (
-                <Link to={routeTo}>{capitalizeFirstLetter(name)}</Link>
-              )}
-            </li>
-          );
-        })}
+        <img src={arrow} alt="arrow" className={style.arrow} />
+        <li>
+          <Link to="/shop">Shop</Link>
+        </li>
+        <img src={arrow} alt="arrow" className={style.arrow} />
+        <li>
+          <span className={style.productName}>
+            <img className={style.line} src={line} alt="line" />
+            {productName ? capitalizeFirstLetter(productName) : ""}
+          </span>
+        </li>
       </ul>
     </div>
   );

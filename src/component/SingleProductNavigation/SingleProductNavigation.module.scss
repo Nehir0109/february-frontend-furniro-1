@@ -14,7 +14,7 @@
   li {
     display: flex;
     align-items: center;
-    padding-left: 24px;
+    padding-right: 15px;
     @include max($mobile-l) {
       padding-left: 10px;
     }
