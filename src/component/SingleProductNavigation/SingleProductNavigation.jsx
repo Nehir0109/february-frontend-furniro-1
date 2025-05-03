@@ -35,7 +35,7 @@ const SingleProductNavigation = () => {
           const isLast = index === pathnames.length - 1;
 
           return (
-            <li key={index}>
+            <li key={name}>
               <img src={arrow} alt="arrow" className={style.arrow} />
               {isLast ? (
                 <span className={style.productName}>
