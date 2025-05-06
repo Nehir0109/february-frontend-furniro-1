@@ -5,6 +5,7 @@ import { OurProductComponent } from "../OurProductComponent/OurProductComponent"
 import { fetchProducts } from "@/Utils/fetchProducts";
 import { Spin } from "antd";
 import PropTypes from "prop-types";
+import BestSellerCard from "../BestSellerCard";
 
 const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [allProducts, setAllProducts] = useState([]);
@@ -12,6 +13,8 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [showAll, setShowAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
+  const firstFiveBest = allProducts.slice(0,4);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -70,7 +73,11 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
       <div className={style.allProductsContainer}>
         <div className={style.leftContainer}>
           <Filter onFilterChange={handleFilterChange} />
-          <div>{/* Buraya Best Seller gelecek */}</div>
+          <div>
+            {firstFiveBest.map((item) => 
+              <BestSellerCard image={item.images[0]} title={item.name} oldPrice={item.originalPrice} newPrice={item.price}/>
+            ) }
+          </div>
         </div>
         {currentProducts.length > 0 ? (
           <OurProductComponent products={currentProducts} />
