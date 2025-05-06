@@ -1,16 +1,19 @@
 import "./style.scss";
-import { OurProductComponent } from "@/components/OurProductComponent/OurProductComponent";
-import { TopCategoriesSection } from "@/components/TopCategoriesSection/TopCategories";
-import Hero from "../../components/HeroComponent/Hero";
-import { ExploreMoreSection } from "@/components/ExploreMoreSection/ExploreMoreSection";
+import { TopCategoriesSection } from "@/component/TopCategoriesSection/TopCategories";
+import Hero from "@/component/HeroComponent/Hero";
+import { ExploreMoreSection } from "@/component/ExploreMoreSection/ExploreMoreSection";
+import FurnitureSection from "@/component/FurnitureShareSection/FurnitureSection";
+import AllProducts from "@/component/AllProductsComponent/AllProducts";
 
 const HomePage = () => {
   return (
     <div>
+      {/* <Modal/> */}
       <Hero />
       <TopCategoriesSection />
-      <OurProductComponent />
+      <AllProducts showTitle={true} showSeeMore={true} showPagination={false} />
       <ExploreMoreSection />
+      <FurnitureSection />
     </div>
   );
 };
