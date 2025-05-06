@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+import FeatureSection from "../../Components/FeatureSection/FeatureSection";
+import "./style.scss";
+
+
+const ShopPage = () => {
+  return <div>
+    <FeatureSection/>
+  </div>;
+
+};
+
+export default ShopPage;
+=======
 import PageHeader from "@/component/PageHeader/PageHeader";
 import AllProducts from "@/component/AllProductsComponent/AllProducts";
 import "./style.scss";
@@ -12,3 +26,4 @@ const ShopPage = () => {
 };
 
 export default ShopPage;
+>>>>>>> master
