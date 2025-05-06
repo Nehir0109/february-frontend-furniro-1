@@ -78,7 +78,10 @@ const ContactForm = () => {
                             name="message"
                             rules={[{ required: true, message: 'Please enter your message!' }]}
                         >
-                            <Input.TextArea rows={4} placeholder="Hi! I’d like to ask about ..." />
+                            <Input.TextArea
+                                placeholder="Hi! I’d like to ask about ..."
+                                style={{ height: '200px', resize: 'none' }}
+                            />
                         </Form.Item>
                         <Form.Item>
                             <Button type="primary" htmlType="submit" className={styles.submitButton}>
