@@ -16,7 +16,11 @@
     position: relative;
     overflow: hidden;
   }
-
+  // .cardImage {
+  //     width: 100%;
+  //     height: 173px;
+  //     border-radius: 5px;
+  //   }
   .cardImage {
     width: 100%;
     display: block;
@@ -44,7 +48,9 @@
     padding: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s, border-color 0.3s;
+    transition:
+      0.3s,
+      border-color 0.3s;
 
     &:hover {
       background-color: #f5f5f5;
@@ -62,11 +68,8 @@
   .filledHeart {
     color: #ff4d4f !important;
   }
-
-  .cardImage {
-    width: 100%;
-    height: 173px;
-    border-radius: 5px;
+  .filledBasket {
+    color: #ff4d4f !important;
   }
   .cardDetails {
     .cardTitle {
