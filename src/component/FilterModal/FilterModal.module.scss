@@ -1,0 +1,145 @@
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/mixins" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  width: 100%;
+  max-width: 290px;
+  min-height: 367px;
+  overflow-y: auto;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.priceSection {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+  h4 {
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #6f6f6f;
+    padding-bottom: 10px;
+  }
+}
+.ClrSection {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+  h4 {
+    padding-bottom: 10px;
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #6f6f6f;
+  }
+}
+.ratingSection {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+  h4 {
+    padding-bottom: 10px;
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #6f6f6f;
+  }
+  .rating {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ratingItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    input[type="checkbox"] {
+      accent-color: #333;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.colorOptions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.colorBtn {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.selectedColors {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.selectedColorItem {
+  width: 18px;
+
+  height: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.clearBtn {
+  border-radius: 6px;
+
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  &:hover {
+    background: #000;
+  }
+}
+
+.inactive {
+  color: #ddd !important;
+}

@@ -5,14 +5,16 @@ import { OurProductComponent } from "../OurProductComponent/OurProductComponent"
 import { fetchProducts } from "@/Utils/fetchProducts";
 import { Spin } from "antd";
 import PropTypes from "prop-types";
-
+import { useSearchParams } from "react-router-dom";
 const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
+  // balasoö
 
+  // bitti
   useEffect(() => {
     const fetchData = async () => {
       try {
