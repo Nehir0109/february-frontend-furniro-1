@@ -39,8 +39,13 @@
             font-weight: 500;
 
             .oldPrice {
-                text-decoration:line-through;            }
+                text-decoration:line-through; 
+            }
         }
     }
 
+}
+
+.container:hover {
+    cursor: pointer;
 }
