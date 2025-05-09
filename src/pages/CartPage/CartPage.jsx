@@ -1,9 +1,6 @@
-import PageHeader from "../../component/PageHeader/PageHeader";
-<<<<<<< HEAD
-=======
-import FeatureSection from "../../Components/FeatureSection/FeatureSection";
+import PageHeader from "@/component/PageHeader/PageHeader";
+import FeatureSection from "@/Components/FeatureSection/FeatureSection";
 
->>>>>>> master
 import "./style.scss";
 
 const CartPage = () => {
