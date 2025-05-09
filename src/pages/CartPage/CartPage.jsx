@@ -1,5 +1,5 @@
-import PageHeader from "../../component/PageHeader/PageHeader";
-import FeatureSection from "../../Components/FeatureSection/FeatureSection";
+import PageHeader from "@/component/PageHeader/PageHeader";
+import FeatureSection from "@/Components/FeatureSection/FeatureSection";
 
 import "./style.scss";
 
