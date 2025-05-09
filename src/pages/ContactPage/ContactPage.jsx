@@ -1,6 +1,7 @@
-import PageHeader from "../../component/PageHeader/PageHeader";
-import ContactForm from "../../component/ContactForm/ContactForm";
-import FeatureSection from "../../Components/FeatureSection/FeatureSection";
+import PageHeader from "@/component/PageHeader/PageHeader";
+import FeatureSection from "@/Components/FeatureSection/FeatureSection";
+import ContactForm from "@/component/ContactForm/ContactForm";
+
 import "./style.scss";
 
 const ContactPage = () => {
@@ -8,7 +9,7 @@ const ContactPage = () => {
     <div>
       <PageHeader />
       <ContactForm />
-      <FeatureSection/>
+      <FeatureSection />
     </div>
   );
 };
