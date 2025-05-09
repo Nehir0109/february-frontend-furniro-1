@@ -35,6 +35,11 @@
                     width: 150px;
                     height: 48px;
                 }
+                .tab:hover {
+                    color: white;
+                    background-color: $clr-golden;
+                    border: 1px solid $clr-golden;
+                }
                 .active{
                     color: white;
                     background-color: $clr-golden;
