@@ -1,0 +1,250 @@
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/mixins" as *;
+
+.container {
+  max-width: 1127px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  min-height: 100vh;
+  margin: 80px auto;
+
+  @media (max-width: $desktop-S) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.form {
+  max-width: 454px;
+  width: 100%;
+  @media (max-width: $desktop-S) {
+    max-width: 100%;
+    padding: 0 100px;
+  }
+  @media (max-width: $tablet-M) {
+    padding: 0 30px;
+  }
+  @media (max-width: $mobile-m) {
+    padding: 0;
+  }
+
+  .heading {
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: $fnt-size-8xl;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  .row {
+    max-width: 453px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 43px;
+    @media (max-width: $desktop-S) {
+      max-width: 100%;
+      gap: 20px;
+    }
+    @media (max-width: $tablet-m) {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    input {
+      width: 211px;
+      @media (max-width: $desktop-S) {
+        width: 100%;
+        flex: 1;
+      }
+    }
+  }
+
+  .formLayout {
+    display: flex;
+    flex-direction: column;
+
+    .group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+      @media (max-width: $desktop-S) {
+        width: 100%;
+      }
+      label {
+        font-family: $primary-font;
+        font-weight: 500;
+        font-size: $fnt-size-md;
+        line-height: 100%;
+        letter-spacing: 0%;
+        margin-bottom: 15px;
+      }
+    }
+    input,
+    select,
+    textarea {
+      padding: 15px;
+      border: 2px solid $clr-lightGrey;
+      border-radius: 10px;
+      font-family: $primary-font;
+      font-weight: 400;
+      font-size: $fnt-size-md;
+      line-height: 100%;
+      letter-spacing: 0%;
+
+      &:focus {
+        outline: none;
+        border-color: $clr-grey;
+      }
+    }
+  }
+}
+.summary {
+  margin-top: 50px;
+  max-width: 529px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  @media (max-width: $desktop-S) {
+    max-width: 100%;
+    padding: 0 100px;
+  }
+  @media (max-width: $tablet-M) {
+    padding: 0 30px;
+  }
+  @media (max-width: $mobile-m) {
+    padding: 0;
+  }
+  .summaryHeader {
+    display: flex;
+    flex-direction: column;
+    max-width: 475px;
+    width: 100%;
+    gap: 17px;
+    @media (max-width: $desktop-S) {
+      max-width: 100%;
+    }
+    .summaryTitle {
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        font-family: $primary-font;
+        font-weight: 500;
+        font-size: $fnt-size-2xl;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+    }
+    .summaryItem {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-family: $primary-font;
+        font-weight: 400;
+        font-size: $fnt-size-md;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+      .productName {
+        font-weight: 400;
+        font-size: $fnt-size-md;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: $clr-lightGrey;
+      }
+    }
+  }
+}
+strong {
+  font-family: $primary-font;
+  font-weight: 700;
+  font-size: $fnt-size-2xl;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: $clr-golden;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    input[type="radio"] {
+      accent-color: $clr-black;
+      cursor: pointer;
+    }
+  }
+}
+.radio {
+  max-width: 389px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $mobile-M) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: $fnt-size-md;
+    line-height: 100%;
+    color: $clr-lightGrey;
+  }
+
+  input[type="radio"] {
+    accent-color: $clr-black;
+    cursor: pointer;
+  }
+  &:checked {
+    accent-color: $clr-black;
+  }
+}
+.orderBtn {
+  max-width: 318px;
+  width: 100%;
+  height: 64px;
+  border: 2px solid $clr-lightGrey;
+  opacity: 0.9;
+  border-radius: 10px;
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: $fnt-size-xl;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: $clr-grey;
+  &:hover {
+    background-color: $clr-lightGrey;
+    opacity: 0.8;
+  }
+}
+.desc {
+  font-family: $primary-font;
+  font-weight: 300;
+  font-size: $fnt-size-md;
+  line-height: 160%;
+  letter-spacing: 0%;
+  text-align: justify;
+  color: $clr-lightGrey;
+}
+.note {
+  font-family: $primary-font;
+  font-weight: 300;
+  font-size: $fnt-size-md;
+  line-height: 160%;
+  text-align: justify;
+
+  a {
+    font-weight: 600;
+  }
+}
