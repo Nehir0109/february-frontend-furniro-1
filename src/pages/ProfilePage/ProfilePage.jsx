@@ -1,17 +1,7 @@
-<<<<<<< HEAD
-import "./style.scss";
-import FeatureSection from "../../Components/FeatureSection/FeatureSection";
-
-const ProfilePage = () => {
-  return <div>Profile
-     <FeatureSection/>
-  </div>;
-};
-
-export default ProfilePage;
-=======
 import PageHeader from "../../component/PageHeader/PageHeader";
 import UserProfile from "../../component/UserProfile/UserProfile";
+import FeatureSection from "../../Components/FeatureSection/FeatureSection";
+
 import "./style.scss";
 
 const ProfilePage = () => {
@@ -19,9 +9,9 @@ const ProfilePage = () => {
     <div>
       <PageHeader />
       <UserProfile />
+      <FeatureSection />
     </div>
   );
 };
 
 export default ProfilePage;
->>>>>>> master
