@@ -4,18 +4,18 @@ const BlogCard = ({ blogCard }) => {
     return (
         <div className={style.blogCard}>
         <img src={blogCard.img} />
-        <div className="iconBlog" >
-            <div className="icon">
+        <div className= {style.iconBlog}  >
+            <div className={style.icon}>
                 <img src="src/assets/blog/user" alt="" />
-                <span className="admin" >admin</span>
+                <span className= {style.admin} >admin</span>
             </div>
-            <div className="iconTwo">
+            <div className= {style.iconTwo}>
                 <img src="src/assets/blog/takvim" alt="" />
-                <span className="admin" >14 oct 2022</span>
+                <span className={style.admin} >14 oct 2022</span>
             </div>
             <div className="iconThre" >
                 <img src="src/assets/blog/etiket" alt="" />
-                <span className="admin" >{blogCard.iconTitle}</span>
+                <span className={style.admin} >{blogCard.iconTitle}</span>
             </div>
         </div>
         <h2>{blogCard.title}</h2>
