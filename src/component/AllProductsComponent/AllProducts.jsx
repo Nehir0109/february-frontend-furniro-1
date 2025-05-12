@@ -76,7 +76,13 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
           <div className={style.bestSellerCard}>
             <h3 className={style.bestTitle}>Best Sellers</h3>
             {firstFiveBest.map((item) => 
-              <BestSellerCard image={item.images[0]} title={item.name} oldPrice={item.originalPrice} newPrice={item.price}/>
+              <BestSellerCard
+                image={item.images[0]}
+                title={item.name}
+                oldPrice={item.originalPrice}
+                newPrice={item.price}
+                rating={item.rating}
+              />
             ) }
           </div>
         </div>
