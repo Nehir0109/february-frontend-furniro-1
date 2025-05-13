@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./FilterModal.module.scss";
 import { Rate } from "antd";
-import clearClr from "./../../assets/ShopPage/clearClr.svg";
+import clearClr from "@/assets/ShopPage/clearClr.svg";
 import { toggleValue } from "./../../Utils/toggleValue.js";
+import { useSearchParams } from "react-router-dom";
+
 const colors = ["#000", "#f00", "#0f0", "#00f", "#ff0"];
 
 const FilterModal = ({ onClose }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [price, setPrice] = useState(10000);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedRatings, setSelectedRatings] = useState([]);
@@ -16,6 +20,14 @@ const FilterModal = ({ onClose }) => {
 
   const toggleRating = (rating) => {
     toggleValue(rating, setSelectedRatings, selectedRatings);
+  };
+  const applyFilters = () => {
+    const params = {};
+
+    if (price) params.price = price;
+    if (selectedRatings.length > 0) params.ratings = selectedRatings.join(",");
+    setSearchParams(params);
+    onClose();
   };
 
   return (
@@ -35,7 +47,7 @@ const FilterModal = ({ onClose }) => {
             <span>$0</span>
             <span>${price}</span>
           </div>
-          <div className={style.priceBoc}>$0 - ${price}</div>
+          <div className={styles.priceBoc}>$0 - ${price}</div>
         </div>
 
         {/* Color */}
@@ -46,7 +58,7 @@ const FilterModal = ({ onClose }) => {
             {colors.map((color, idx) => (
               <button
                 key={idx}
-                className={`${styles.colorBtn} `}
+                className={`${styles.colorBtn}`}
                 style={{ backgroundColor: color }}
                 onClick={() => toggleColor(color)}
               />
@@ -86,15 +98,15 @@ const FilterModal = ({ onClose }) => {
           </div>
         </div>
 
-        <div>
-          <button className={styles.closeBtn} onClick={onClose}>
-            Apply Filters
+        <div className={styles.buttonContainer}>
+          <button className={styles.closeBtn} onClick={applyFilters}>
+            Apply
           </button>
-          <button className={styles.closeBtn} onClick={onClose}>
+          <button className={styles.cancelBtn} onClick={onClose}>
             Cancel
           </button>
         </div>
-      </div>{" "}
+      </div>
     </div>
   );
 };
