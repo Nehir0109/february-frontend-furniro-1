@@ -13,8 +13,7 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [showAll, setShowAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
-  const firstFiveBest = allProducts.slice(0,4);
-  
+  const firstFiveBest = allProducts.slice(0, 4);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +48,7 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
 
       setFilteredProducts(filtered);
     },
-    [allProducts],
+    [allProducts]
   );
 
   const handleSeeMoreClick = () => {
@@ -71,19 +70,13 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
     <div className={style.allProducts}>
       {showTitle && <h1 className={style.title}>Our Products</h1>}
       <div className={style.allProductsContainer}>
-        <div className={style.leftContainer}> 
+        <div className={style.leftContainer}>
           <Filter onFilterChange={handleFilterChange} />
           <div className={style.bestSellerCard}>
             <h3 className={style.bestTitle}>Best Sellers</h3>
-            {firstFiveBest.map((item) => 
-              <BestSellerCard
-                image={item.images[0]}
-                title={item.name}
-                oldPrice={item.originalPrice}
-                newPrice={item.price}
-                rating={item.rating}
-              />
-            ) }
+            {firstFiveBest.map((item, index) => (
+              <BestSellerCard product={item} key={index} />
+            ))}
           </div>
         </div>
         {currentProducts.length > 0 ? (
