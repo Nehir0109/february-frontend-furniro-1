@@ -1,5 +1,5 @@
-
-const category = () =>{
+import style from "./blogCategory.module.scss" 
+const BlogCategory = () =>{
 
     return (
         <div className={style.category} >
@@ -25,5 +25,5 @@ const category = () =>{
     
 };
 
-export default category;
+export default BlogCategory;
  
