@@ -5,16 +5,20 @@ import { OurProductComponent } from "../OurProductComponent/OurProductComponent"
 import { fetchProducts } from "@/Utils/fetchProducts";
 import { Spin } from "antd";
 import PropTypes from "prop-types";
+import BestSellerCard from "../BestSellerCard";
 import { useSearchParams } from "react-router-dom";
+
 const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
+  const firstFiveBest = allProducts.slice(0, 4);
   const [searchParams] = useSearchParams();
   const ratings = searchParams.get("ratings");
   const price = searchParams.get("price");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,24 +40,25 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const handleFilterChange = useCallback(
     (filters) => {
       let filtered = allProducts;
+
       if (Object.keys(filters).length !== 0) {
         filtered = allProducts.filter((product) => {
           const roomFilters = filters[product.room];
           return roomFilters ? roomFilters.includes(product.type) : false;
         });
       }
+
       if (price) {
         const maxPrice = parseInt(price, 10);
         filtered = filtered.filter((product) => product.price <= maxPrice);
       }
-let ratingList = [];
 
-if (ratings) {
-  ratingList = ratings.split(",").map(Number);
-  filtered = filtered.filter((product) =>
-    ratingList.includes(product.rating)
-  );
-}
+      if (ratings) {
+        const ratingList = ratings.split(",").map(Number);
+        filtered = filtered.filter((product) =>
+          ratingList.includes(Math.round(product.rating))
+        );
+      }
 
       setCurrentPage(1);
       setFilteredProducts(filtered);
@@ -86,10 +91,17 @@ if (ratings) {
       <div className={style.allProductsContainer}>
         <div className={style.leftContainer}>
           <Filter onFilterChange={handleFilterChange} />
-          <div>{/* Buraya Best Seller gelecek */}</div>
+          <div className={style.bestSellerCard}>
+            <h3 className={style.bestTitle}>Best Sellers</h3>
+            {firstFiveBest.map((item, index) => (
+              <BestSellerCard product={item} key={index} />
+            ))}
+          </div>
         </div>
         {filteredProducts.length === 0 ? (
-          <div className={style.noProductsMessage}>Sorry, no products match your filter criteria.</div>
+          <div className={style.noProductsMessage}>
+            Sorry, no products match your filter criteria.
+          </div>
         ) : currentProducts.length > 0 ? (
           <OurProductComponent products={currentProducts} />
         ) : (
@@ -127,7 +139,9 @@ if (ratings) {
               key={index}
               onClick={() => handlePageChange(index + 1)}
               className={
-                currentPage === index + 1 ? style.activePage : style.pageBtn
+                currentPage === index + 1
+                  ? style.activePage
+                  : style.pageBtn
               }
             >
               {index + 1}
@@ -147,6 +161,7 @@ if (ratings) {
     </div>
   );
 };
+
 AllProducts.propTypes = {
   showTitle: PropTypes.bool,
   showSeeMore: PropTypes.bool,

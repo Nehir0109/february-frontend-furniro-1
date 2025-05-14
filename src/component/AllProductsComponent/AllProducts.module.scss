@@ -27,10 +27,32 @@ h1 {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
     @include max($tablet-l) {
       display: block;
       margin: auto;
       margin-bottom: 20px;
+    }
+
+    .bestSellerCard{
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      gap: 15px;
+      margin-left: 20px;
+
+      @include max(993px){
+        display: none;
+      }
+
+      .bestTitle{
+        font-size: $fnt-size-md;
+        font-weight: 700;
+        line-height: 120%;
+        color: $clr-grey;
+      }
+
     }
   }
   @include max($tablet-l) {

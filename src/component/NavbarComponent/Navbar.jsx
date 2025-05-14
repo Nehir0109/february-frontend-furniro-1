@@ -9,6 +9,7 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "../Modal/Modal";
+import { useEffect, useRef } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -16,6 +17,22 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const dropdownRef = useRef(null); 
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    setIsLoggedIn(!!user);
+
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -25,10 +42,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const goToProfile = () => {
-    navigate("/profile");
-  };
-
   const toggleModal = (type) => {
     setModalType(type);
     setIsModalOpen(!isModalOpen);
@@ -36,6 +49,24 @@ const Navbar = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    setIsDropdownOpen(false);
+    navigate("/auth");
+  };
+
+  const goToProfile = () => {
+    navigate("/profile");
+    setIsDropdownOpen(false);
+  };
+
+  const goToAuth = () => {
+    navigate("/auth");
+    setIsDropdownOpen(false);
   };
 
   return (
@@ -64,25 +95,35 @@ const Navbar = () => {
         onClick={toggleMenu}
         icon={isMenuOpen ? faTimes : faBars}
       />
-      <ul className={`${style.navLinks} `}>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/shop">Shop</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
-        </li>
+      <ul className={`${style.navLinks} ${isMenuOpen ? style.show : ""}`}>
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <ul className={style.icons}>
-        <li>
-          <button onClick={goToProfile}>
+        <li ref={dropdownRef} style={{ position: "relative" }}>
+          <button onClick={toggleDropdown}>
             <img src={user} alt="user" />
           </button>
+          {isDropdownOpen && (
+            <div className={style.dropdown} ref={dropdownRef}>
+              {!isLoggedIn ? (
+                <>
+                  <button onClick={() => navigate("/profile")}>Profile</button>
+                  <hr className={style.divider} />
+                  <button onClick={() => navigate("/auth")}>Get Started</button>
+                </>
+              ) : (
+                <>
+                  <button onClick={() => navigate("/profile")}>Profile</button>
+                  <hr className={style.divider} />
+                  <button onClick={handleLogout}>Logout</button>
+                </>
+              )}
+            </div>
+          )}
+
         </li>
         <li>
           <button onClick={toggleSearch}>

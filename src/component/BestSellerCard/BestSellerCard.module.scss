@@ -1,0 +1,47 @@
+@use "@/styles/abstracts/variables" as *;
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    text-align:left;
+    gap: 10px;
+    padding: 10px 0;
+    max-width: 273px;
+
+    .image {
+        width: 70px;
+        height: 70px;
+        border-radius: 4px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5px;
+
+        .title{
+            font-size: $fnt-size-md;
+            font-weight: 500;
+            color: $clr-grey;
+            line-height: 120%;
+        }
+        .priceWrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap:10px;
+            font-size: $fnt-size-3xs;
+            font-weight: 500;
+
+            .oldPrice {
+                text-decoration:line-through; 
+            }
+        }
+    }
+
+}
+
+.container:hover {
+    cursor: pointer;
+}

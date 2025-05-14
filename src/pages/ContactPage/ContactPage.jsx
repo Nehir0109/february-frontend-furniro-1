@@ -1,10 +1,15 @@
-import PageHeader from "../../component/PageHeader/PageHeader";
+import PageHeader from "@/component/PageHeader/PageHeader";
+import FeatureSection from "@/Components/FeatureSection/FeatureSection";
+import ContactForm from "@/component/ContactForm/ContactForm";
+
 import "./style.scss";
 
 const ContactPage = () => {
   return (
     <div>
       <PageHeader />
+      <ContactForm />
+      <FeatureSection />
     </div>
   );
 };
