@@ -15,7 +15,6 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [searchParams] = useSearchParams();
   const ratings = searchParams.get("ratings");
   const price = searchParams.get("price");
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -47,12 +46,14 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
         const maxPrice = parseInt(price, 10);
         filtered = filtered.filter((product) => product.price <= maxPrice);
       }
-      if (ratings) {
-        const ratingList = ratings.split(",").map(Number);
-        filtered = filtered.filter((product) =>
-          ratingList.includes(product.rating)
-        );
-      }
+let ratingList = [];
+
+if (ratings) {
+  ratingList = ratings.split(",").map(Number);
+  filtered = filtered.filter((product) =>
+    ratingList.includes(product.rating)
+  );
+}
 
       setCurrentPage(1);
       setFilteredProducts(filtered);
