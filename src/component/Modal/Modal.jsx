@@ -10,7 +10,7 @@ const Modal = ({ closeModal, type }) => {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    const key = type === "shop" ? "cart" : "favorites";
+    const key = type === "shop" ? "basket" : "favorites";
     const storedItems = localStorageUtility.get(key);
     setItems(storedItems || []);
   }, [type]);
@@ -19,7 +19,7 @@ const Modal = ({ closeModal, type }) => {
     const updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
 
-    const key = type === "shop" ? "cart" : "favorites";
+    const key = type === "shop" ? "basket" : "favorites";
     localStorage.setItem(key, JSON.stringify(updatedItems));
   };
 

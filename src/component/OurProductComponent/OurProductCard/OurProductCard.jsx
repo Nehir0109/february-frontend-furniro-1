@@ -21,14 +21,14 @@ export const OurProductCard = ({ product }) => {
   };
 
   const handleAddToCart = () => {
-    const cart = localStorageUtility.get("cart") || [];
+    const cart = localStorageUtility.get("basket") || [];
 
     if (cart.some((item) => item.id === product.id)) {
-      localStorageUtility.remove("cart", product.id);
+      localStorageUtility.remove("basket", product.id);
       setInBasket(false);
     } else {
       setInBasket(true);
-      localStorageUtility.set("cart", [...cart, product]);
+      localStorageUtility.set("basket", [...cart, product]);
     }
   };
 
