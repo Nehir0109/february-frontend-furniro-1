@@ -4,15 +4,19 @@ import { Rate } from "antd";
 import clearClr from "@/assets/ShopPage/clearClr.svg";
 import { toggleValue } from "./../../Utils/toggleValue.js";
 import { useSearchParams } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const colors = ["#000", "#f00", "#0f0", "#00f", "#ff0"];
 
 const FilterModal = ({ onClose }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
+  const [searchParams, setSearchParams] = useSearchParams();
   const [price, setPrice] = useState(10000);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedRatings, setSelectedRatings] = useState([]);
+  const resetFilters = () => {
+    navigate("/shop");
+  };
 
   const toggleColor = (color) => {
     toggleValue(color, setSelectedColors, selectedColors);
@@ -104,6 +108,15 @@ const FilterModal = ({ onClose }) => {
           </button>
           <button className={styles.cancelBtn} onClick={onClose}>
             Cancel
+          </button>
+          <button
+            onClick={() => {
+              resetFilters();
+              onClose();
+            }}
+            className={styles.resetButton}
+          >
+            Reset All
           </button>
         </div>
       </div>

@@ -144,12 +144,13 @@
     }
     .buttonContainer {
       display: flex;
-      justify-content: space-between;
+      gap: 5px;
       .cancelBtn {
         background-color: #797575;
         padding: 5px 10px;
         color: white;
         border-radius: 5px;
+        flex: 1;
         &:hover {
           opacity: 80%;
         }
@@ -158,10 +159,20 @@
         padding: 5px 15px;
         background-color: rgb(207, 120, 13);
         border-radius: 5px;
-
+        flex: 1;
         &:hover {
           opacity: 80%;
           border-radius: 5px;
+        }
+      }
+      .resetButton {
+        flex: 1;
+        border: 1px solid gray;
+        border-radius: 5px;
+
+        &:hover {
+          opacity: 0.8;
+          background-color: #ddd;
         }
       }
     }

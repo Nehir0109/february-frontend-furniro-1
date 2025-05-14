@@ -12,9 +12,10 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [showAll, setShowAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
-  // balasoö
+  const [searchParams] = useSearchParams();
+  const ratings = searchParams.get("ratings");
+  const price = searchParams.get("price");
 
-  // bitti
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,20 +37,32 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const handleFilterChange = useCallback(
     (filters) => {
       let filtered = allProducts;
-
       if (Object.keys(filters).length !== 0) {
         filtered = allProducts.filter((product) => {
           const roomFilters = filters[product.room];
           return roomFilters ? roomFilters.includes(product.type) : false;
         });
       }
+      if (price) {
+        const maxPrice = parseInt(price, 10);
+        filtered = filtered.filter((product) => product.price <= maxPrice);
+      }
+      if (ratings) {
+        const ratingList = ratings.split(",").map(Number);
+        filtered = filtered.filter((product) =>
+          ratingList.includes(product.rating)
+        );
+      }
 
       setCurrentPage(1);
-
       setFilteredProducts(filtered);
     },
-    [allProducts],
+    [allProducts, price, ratings]
   );
+
+  useEffect(() => {
+    handleFilterChange({});
+  }, [searchParams, allProducts]);
 
   const handleSeeMoreClick = () => {
     setShowAll((prev) => !prev);
@@ -74,7 +87,9 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
           <Filter onFilterChange={handleFilterChange} />
           <div>{/* Buraya Best Seller gelecek */}</div>
         </div>
-        {currentProducts.length > 0 ? (
+        {filteredProducts.length === 0 ? (
+          <div className={style.noProductsMessage}>Sorry, no products match your filter criteria.</div>
+        ) : currentProducts.length > 0 ? (
           <OurProductComponent products={currentProducts} />
         ) : (
           <Spin
@@ -110,7 +125,9 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
             <button
               key={index}
               onClick={() => handlePageChange(index + 1)}
-              className={currentPage === index + 1 ? style.activePage : style.pageBtn}
+              className={
+                currentPage === index + 1 ? style.activePage : style.pageBtn
+              }
             >
               {index + 1}
             </button>
