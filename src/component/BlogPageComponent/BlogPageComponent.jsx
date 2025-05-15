@@ -36,45 +36,45 @@ const blogPost = [
     },
     {
         img: "src/assets/blog/post3.jpg",
-        title: "Handmade pieces that took time to make",
+        title: "Handmade pieces that took time to ",
         date:"03 Aug 2022"
     },
      {
         img: "src/assets/blog/post4.jpg",
-        title: "Handmade pieces that took time to make",
+        title: "Modern home in Milan",
         date:"03 Aug 2022"
     },
      {
         img: "src/assets/blog/post5.jpg",
-        title: "Handmade pieces that took time to make",
+        title: "Colorful office redesign",
         date:"03 Aug 2022"
     },
 ]
   return (
 
     <div className={style.container} >
-    <div> 
-      {blogCards.map((card,index) => (
-      <BlogCard key={index} blogCard={card} />
-    
-      ))}
-
-    </div> 
+         <div> 
+         {blogCards.map((card,index) => (
+         <BlogCard key={index} blogCard={card} />
+         ))}
+         </div> 
 
     
 
-    <div>
-       <div>
-        
-   {blogPost.map((post,index) =>(
-  <BlogPost key={index} blogPost={post} />
-))}
+         <div>
+             <BlogCategory />
+
+            <div className={style.BlogPostDiv} >
+                 <h2>Recent Posts</h2>
+              {blogPost.map((post,index) =>(
+              <BlogPost key={index} blogPost={post} />
+              ))}
+             </div>
+    
+            
+
+         </div>
     </div>
-    
-  <BlogCategory />
-
-    </div>
-      </div>
   )
 }
 

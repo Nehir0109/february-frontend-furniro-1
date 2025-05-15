@@ -1,0 +1,64 @@
+
+.blogCard{
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+    margin: 40px;
+
+    
+
+  .imgCard{
+    width: 817px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+    h2{
+        color: #3A3A3A;
+        font-weight: 500;
+    }
+
+    p{
+        color: #ACACAC;
+        font-weight: 400;
+        max-width: 817px;
+       
+    }
+    .reedMode{
+        color: #3A3A3A;
+        font-weight: 400;
+    }
+    .iconBlog{
+        display: flex;
+        justify-content: baseline;
+        gap: 40px;
+
+        span{
+        color: #ACACAC;
+    }
+
+      .icon , .iconTwo , .iconThre {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+      }
+      
+        
+    }
+
+    .line {
+    position: relative;
+    display: inline;
+  }
+  .line::after{
+        content: ' ';
+        width: 70px;
+        height: 1px;
+        display: block;
+        background-color: #3A3A3A;
+        position: absolute;
+        left: 7px;
+  
+  }
+}

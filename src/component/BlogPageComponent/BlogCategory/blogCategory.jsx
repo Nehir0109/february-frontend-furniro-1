@@ -3,8 +3,9 @@ const BlogCategory = () =>{
 
     return (
         <div className={style.category} >
-            <input type="text"></input>
+            <input type="text"  ></input>
             <h2>Categories</h2>
+            <div className={style.div}>
             <div className={style.categoryName} >
                 <span>Crafts</span>
                 <span>Design</span>
@@ -18,6 +19,7 @@ const BlogCategory = () =>{
                 <span>7</span>
                 <span>1</span>
                 <span>6</span>
+            </div>
             </div>
         </div>
    

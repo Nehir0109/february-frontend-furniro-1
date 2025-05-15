@@ -1,16 +1,19 @@
-
+import style from "./BlogPost.module.scss" 
 const blogPost = ({blogPost}) => {
     return (
-        <div>
-            <h2>Recent Posts</h2>
-            <div>
+       
+         
+        <div className={style.Post} >
+          
+             <div className={style.connetc} >
                 <img src={blogPost.img} alt="" />
-                <div>
-                <h3>{blogPost.title}</h3>
+                <div className={style.postConnet} >
+                <p>{blogPost.title}</p>
                 <span>{blogPost.date}</span>
                 </div>
             </div>
         </div>
+       
     )
 }
 
