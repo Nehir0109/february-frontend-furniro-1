@@ -5,6 +5,8 @@ import { OurProductComponent } from "../OurProductComponent/OurProductComponent"
 import { fetchProducts } from "@/Utils/fetchProducts";
 import { Spin } from "antd";
 import PropTypes from "prop-types";
+import BestSellerCard from "../BestSellerCard";
+import { useSearchParams } from "react-router-dom";
 
 const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [allProducts, setAllProducts] = useState([]);
@@ -12,6 +14,10 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
   const [showAll, setShowAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
+  const firstFiveBest = allProducts.slice(0, 4);
+  const [searchParams] = useSearchParams();
+  const ratings = searchParams.get("ratings");
+  const price = searchParams.get("price");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,12 +48,27 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
         });
       }
 
-      setCurrentPage(1);
+      if (price) {
+        const maxPrice = parseInt(price, 10);
+        filtered = filtered.filter((product) => product.price <= maxPrice);
+      }
 
+      if (ratings) {
+        const ratingList = ratings.split(",").map(Number);
+        filtered = filtered.filter((product) =>
+          ratingList.includes(Math.round(product.rating))
+        );
+      }
+
+      setCurrentPage(1);
       setFilteredProducts(filtered);
     },
-    [allProducts],
+    [allProducts, price, ratings]
   );
+
+  useEffect(() => {
+    handleFilterChange({});
+  }, [searchParams, allProducts]);
 
   const handleSeeMoreClick = () => {
     setShowAll((prev) => !prev);
@@ -70,9 +91,18 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
       <div className={style.allProductsContainer}>
         <div className={style.leftContainer}>
           <Filter onFilterChange={handleFilterChange} />
-          <div>{/* Buraya Best Seller gelecek */}</div>
+          <div className={style.bestSellerCard}>
+            <h3 className={style.bestTitle}>Best Sellers</h3>
+            {firstFiveBest.map((item, index) => (
+              <BestSellerCard product={item} key={index} />
+            ))}
+          </div>
         </div>
-        {currentProducts.length > 0 ? (
+        {filteredProducts.length === 0 ? (
+          <div className={style.noProductsMessage}>
+            Sorry, no products match your filter criteria.
+          </div>
+        ) : currentProducts.length > 0 ? (
           <OurProductComponent products={currentProducts} />
         ) : (
           <Spin
@@ -108,7 +138,11 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
             <button
               key={index}
               onClick={() => handlePageChange(index + 1)}
-              className={currentPage === index + 1 ? style.activePage : style.pageBtn}
+              className={
+                currentPage === index + 1
+                  ? style.activePage
+                  : style.pageBtn
+              }
             >
               {index + 1}
             </button>
@@ -127,6 +161,7 @@ const AllProducts = ({ showTitle, showSeeMore, showPagination }) => {
     </div>
   );
 };
+
 AllProducts.propTypes = {
   showTitle: PropTypes.bool,
   showSeeMore: PropTypes.bool,

@@ -1,0 +1,127 @@
+import { useState } from "react";
+import styles from "./FilterModal.module.scss";
+import { Rate } from "antd";
+import clearClr from "@/assets/ShopPage/clearClr.svg";
+import { toggleValue } from "./../../Utils/toggleValue.js";
+import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+const colors = ["#000", "#f00", "#0f0", "#00f", "#ff0"];
+
+const FilterModal = ({ onClose }) => {
+  const navigate = useNavigate();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [price, setPrice] = useState(10000);
+  const [selectedColors, setSelectedColors] = useState([]);
+  const [selectedRatings, setSelectedRatings] = useState([]);
+  const resetFilters = () => {
+    navigate("/shop");
+  };
+
+  const toggleColor = (color) => {
+    toggleValue(color, setSelectedColors, selectedColors);
+  };
+
+  const toggleRating = (rating) => {
+    toggleValue(rating, setSelectedRatings, selectedRatings);
+  };
+  const applyFilters = () => {
+    const params = {};
+
+    if (price) params.price = price;
+    if (selectedRatings.length > 0) params.ratings = selectedRatings.join(",");
+    setSearchParams(params);
+    onClose();
+  };
+
+  return (
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        {/* Price */}
+        <div className={styles.priceSection}>
+          <h4>Price</h4>
+          <input
+            type="range"
+            min="0"
+            max="10000"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <div className={styles.rangeLabels}>
+            <span>$0</span>
+            <span>${price}</span>
+          </div>
+          <div className={styles.priceBoc}>$0 - ${price}</div>
+        </div>
+
+        {/* Color */}
+        <div className={styles.ClrSection}>
+          <h4>Color</h4>
+
+          <div className={styles.colorOptions}>
+            {colors.map((color, idx) => (
+              <button
+                key={idx}
+                className={`${styles.colorBtn}`}
+                style={{ backgroundColor: color }}
+                onClick={() => toggleColor(color)}
+              />
+            ))}
+          </div>
+          <div className={styles.selectedColors}>
+            {selectedColors.map((color, idx) => (
+              <div
+                onClick={() => toggleColor(color)}
+                style={{
+                  backgroundColor: color,
+                }}
+                key={idx}
+                className={styles.selectedColorItem}
+              >
+                <img style={{ width: "10px" }} src={clearClr} alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Rating */}
+        <div className={styles.ratingSection}>
+          <h4>Customer Rating</h4>
+          <div className={styles.rating}>
+            {[5, 4, 3, 2, 1].map((rate) => (
+              <label key={rate} className={styles.ratingItem}>
+                <input
+                  type="checkbox"
+                  checked={selectedRatings.includes(rate)}
+                  onChange={() => toggleRating(rate)}
+                />
+                <span className={styles.checkmark}></span>
+                <Rate disabled defaultValue={rate} />
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.buttonContainer}>
+          <button className={styles.closeBtn} onClick={applyFilters}>
+            Apply
+          </button>
+          <button className={styles.cancelBtn} onClick={onClose}>
+            Cancel
+          </button>
+          <button
+            onClick={() => {
+              resetFilters();
+              onClose();
+            }}
+            className={styles.resetButton}
+          >
+            Reset All
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FilterModal;
