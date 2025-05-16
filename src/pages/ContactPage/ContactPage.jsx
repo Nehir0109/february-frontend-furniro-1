@@ -1,5 +1,5 @@
 import PageHeader from "@/component/PageHeader/PageHeader";
-import FeatureSection from "@/Components/FeatureSection/FeatureSection";
+import FeatureSection from "@/component/FeatureSection/FeatureSection";
 import ContactForm from "@/component/ContactForm/ContactForm";
 
 import "./style.scss";

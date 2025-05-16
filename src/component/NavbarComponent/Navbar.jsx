@@ -17,9 +17,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState("");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
-  const dropdownRef = useRef(null); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -80,7 +80,7 @@ const Navbar = () => {
           <a href="/shop">Shop</a>
         </li>
         <li>
-          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
         </li>
         <li>
           <a href="/contact">Contact</a>
@@ -95,11 +95,19 @@ const Navbar = () => {
         onClick={toggleMenu}
         icon={isMenuOpen ? faTimes : faBars}
       />
-      <ul className={`${style.navLinks} ${isMenuOpen ? style.show : ""}`}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/shop">Shop</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+      <ul className={`${style.navLinks} `}>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/shop">Shop</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
       </ul>
       <ul className={style.icons}>
         <li ref={dropdownRef} style={{ position: "relative" }}>
@@ -123,7 +131,6 @@ const Navbar = () => {
               )}
             </div>
           )}
-
         </li>
         <li>
           <button onClick={toggleSearch}>

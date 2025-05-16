@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+   max-width: 1440px;
+    flex-wrap: nowrap;
+}
+.BlogPostDiv{
+h2{
+    margin-left: 55px;
+}
+}
+
+
+
+@media (max-width: 1265px){
+.container{
+    display: flex;
+    margin: 40px auto;
+    flex-direction: column;
+    justify-content: center;
+}
+.blogCardd{
+     margin: 0px auto;
+}
+.right{
+     margin: 0px auto;
+     display: flex;
+     justify-content:space-between;
+}
+}
+
+@media (max-width: 740px){
+   .right{
+    display: flex;
+    flex-direction: column;
+   } 
+}

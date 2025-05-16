@@ -1,0 +1,31 @@
+.boxs{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    .box{
+        height: 60px;
+        margin: 20px;
+        width: 60px;
+        background-color: #FCF8F3;
+        text-align: center;
+        padding-top: 15px;
+        border-radius: 10px;
+    }
+       .boxNext{
+        height: 60px;
+        margin: 20px;
+        width: 98px;
+        background-color: #FCF8F3;
+        text-align: center;
+        padding-top: 15px;
+        border-radius: 10px;
+    }
+
+     .boxNext:hover{
+        background-color: #B88E2F;
+    }
+      .box:hover{
+        background-color: #B88E2F;
+    }
+}

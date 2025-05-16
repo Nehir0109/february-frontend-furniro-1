@@ -1,0 +1,33 @@
+.category{
+ margin: 40px;
+ 
+    h2{
+        margin-left: 30px;
+    }
+    input{
+        border: 1px solid #ACACAC;
+        width: 310px;
+        height: 58px;
+        border-radius: 10px;
+        margin-bottom: 35px;
+    }
+
+    .div{
+    display: flex;
+    justify-content: space-between;
+    max-width:250px;
+    margin-top: 20px;
+
+    .categoryName , .categoryNumber{
+    display: flex;
+    flex-direction: column;
+
+    span{
+        margin-bottom: 35px;
+        margin-left: 10px;
+    }
+}
+}
+}
+
+

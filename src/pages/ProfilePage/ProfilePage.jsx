@@ -1,6 +1,6 @@
-import PageHeader from "../../component/PageHeader/PageHeader";
-import UserProfile from "../../component/UserProfile/UserProfile";
-import FeatureSection from "../../Components/FeatureSection/FeatureSection";
+import PageHeader from "@/component/PageHeader/PageHeader";
+import UserProfile from "@/component/UserProfile/UserProfile";
+import FeatureSection from "@/component/FeatureSection/FeatureSection";
 
 import "./style.scss";
 
