@@ -18,6 +18,10 @@ h1 {
   margin: auto;
   display: flex;
   margin-top: 40px;
+  .noProductsMessage {
+    margin: auto;
+    margin-top: 20px;
+  }
   .leftContainer {
     max-width: 290px;
     width: 100%;
