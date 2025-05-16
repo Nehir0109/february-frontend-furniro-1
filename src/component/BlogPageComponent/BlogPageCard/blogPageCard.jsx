@@ -1,4 +1,4 @@
-import style from "./blogPageCard.module.scss";
+import style from "./BlogPageCard.module.scss";
 
 const BlogCard = ({ blogCard }) => {
     return (
@@ -6,15 +6,15 @@ const BlogCard = ({ blogCard }) => {
         <img   src={blogCard.img} className={style.imgCard} />
         <div className= {style.iconBlog}  >
             <div className={style.icon}>
-                <img src="src/assets/blog/user.png" alt="" />
+                <img src="src/assets/blog/user.png" alt=""  className={style.img} />
                 <span className= {style.admin} >admin</span>
             </div>
             <div className= {style.iconTwo}>
-                <img src="src/assets/blog/takvim.png" alt="" />
+                <img src="src/assets/blog/takvim.png" alt="" className={style.img} />
                 <span className={style.admin} >14 oct 2022</span>
             </div>
             <div className={style.iconThre} >
-                <img src="src/assets/blog/etiket.png" alt="" />
+                <img src="src/assets/blog/etiket.png" alt="" className={style.img} />
                 <span className={style.admin} >{blogCard.iconTitle}</span>
             </div>
         </div>

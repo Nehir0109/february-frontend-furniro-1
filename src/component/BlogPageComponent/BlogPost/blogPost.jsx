@@ -1,4 +1,5 @@
 import style from "./BlogPost.module.scss" 
+
 const blogPost = ({blogPost}) => {
     return (
        
@@ -12,6 +13,7 @@ const blogPost = ({blogPost}) => {
                 <span>{blogPost.date}</span>
                 </div>
             </div>
+            
         </div>
        
     )

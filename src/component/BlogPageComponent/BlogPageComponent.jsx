@@ -1,7 +1,8 @@
-import BlogCard from "./blogPageCard/blogPageCard";
-import BlogPost from "./blogPost/blogPost"
+import BlogCard from "./BlogPageCard/BlogPageCard";
+import BlogPost from "./BlogPost/BlogPost"
 import style from "./BlogPageComponent.module.scss"
-import BlogCategory from "./blogCategory/blogCategory";
+import BlogCategory from "./BlogCategory/BlogCategory";
+import NumberBox from "./NumberBox/NumberBox";
 
 const BlogPageComponent = () => {
 
@@ -51,17 +52,19 @@ const blogPost = [
     },
 ]
   return (
+<div className= {style.containerWrapper} >
 
     <div className={style.container} >
-         <div> 
+
+         <div className={style.blogCardd} >   
          {blogCards.map((card,index) => (
          <BlogCard key={index} blogCard={card} />
          ))}
-         </div> 
+        </div> 
 
     
 
-         <div>
+         <div className={style.right} >
              <BlogCategory />
 
             <div className={style.BlogPostDiv} >
@@ -71,9 +74,15 @@ const blogPost = [
               ))}
              </div>
     
-            
-
          </div>
+       
+        
+    </div>
+
+    <div className= {style.wrapper}>
+          <NumberBox />
+    </div>
+
     </div>
   )
 }

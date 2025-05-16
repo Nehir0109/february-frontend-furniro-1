@@ -1,4 +1,4 @@
-import style from "./blogCategory.module.scss" 
+import style from "./BlogCategory.module.scss" 
 const BlogCategory = () =>{
 
     return (
